@@ -7,7 +7,7 @@ import Image from "next/image";
 const Webfeature = () => {
   return (
     <>
-      <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-6 py-16 px-4 sm:px-6 lg:px-8 border-b border-gray-300">
+      <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-6 py-12 px-4 sm:px-6 lg:px-8 border-b border-gray-300">
   {/* Feature Item 1 */}
   <div className="flex items-center gap-4 w-full sm:w-auto">
     <Image src={payment} alt="Secure Payment" width={50} height={50} />

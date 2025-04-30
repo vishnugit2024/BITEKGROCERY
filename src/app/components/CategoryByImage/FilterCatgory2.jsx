@@ -1,35 +1,41 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import filterimage1 from "../../Images/DowloadImage/filterimage1.jpg";
-import filterimage2 from "../../Images/DowloadImage/filterimage2.jpg";
-import filterimage3 from "../../Images/DowloadImage/filterimage3.jpg";
+import filterimage4 from "../../Images/DowloadImage/filterimage4.jpg";
+import filterimage5 from "../../Images/DowloadImage/filterimage5.jpg";
+import filterimage6 from "../../Images/DowloadImage/filterimage6.jpg";
+import filterimage7 from "../../Images/DowloadImage/filterimage7.jpg";
 import { MoveRight } from "lucide-react";
 
 const bannerData = [
   {
     id: 1,
-    imgSrc: filterimage1,
+    imgSrc: filterimage4,
     link: "/category/fruits",
     alt: "Fruits Banner",
   },
   {
     id: 2,
-    imgSrc: filterimage2,
+    imgSrc: filterimage5,
     link: "/category/vegetables",
     alt: "Vegetables Banner",
   },
   {
     id: 3,
-    imgSrc: filterimage3,
+    imgSrc: filterimage6,
+    link: "/category/dairy",
+    alt: "Dairy Banner",
+  },
+  {
+    id: 4,
+    imgSrc: filterimage7,
     link: "/category/dairy",
     alt: "Dairy Banner",
   },
 ];
-
-const FilterCatgory1 = () => {
+const FilterCatgory2 = () => {
   return (
-    <div className="max-w-7xl mx-auto px-4 py-8 grid grid-cols-1 sm:grid-cols-3 gap-6">
+    <div className="max-w-7xl mx-auto px-4 py-8 grid grid-cols-1 sm:grid-cols-4 gap-4">
       {bannerData.map((item) => (
         <Link href={item.link} key={item.id} className="block group">
           <div className="relative overflow-hidden rounded-xl shadow-lg">
@@ -38,9 +44,9 @@ const FilterCatgory1 = () => {
               alt={item.alt}
               width={400}
               height={250}
-              className="w-full h-[200px] object-cover transition-transform duration-300 group-hover:scale-105"
+              className="w-full h-[380px] object-cover transition-transform duration-300 group-hover:scale-105"
             />
-            <div className="absolute inset-0 flex items-start justify-start p-5 mt-1.5">
+            <div className="absolute inset-0 flex items-start justify-start p-4">
               <div className="text-black space-y-2 max-w-xs">
                 <p className="text-sm text-red-800 font-semibold">
                   Only this week
@@ -60,4 +66,4 @@ const FilterCatgory1 = () => {
   );
 };
 
-export default FilterCatgory1;
+export default FilterCatgory2;
