@@ -1,13 +1,14 @@
-import React from 'react'
+import React from "react";
 
 const page = () => {
   return (
     <>
-     <div className="flex items-center justify-center h-screen bg-gray-100">
-      <h1 className="text-4xl font-bold text-blue-600">Hello Tailwind!</h1>
-    </div>
+      <div className="flex items-center justify-center h-screen bg-gray-100">
+        <h1 className="text-4xl font-bold text-blue-600">Hello Tailwind!</h1>
+        <h4 className=""></h4>
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default page
+export default page;
