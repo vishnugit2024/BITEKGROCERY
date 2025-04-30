@@ -14,7 +14,7 @@ import logo from "../../Images/logo.jpg"
 import Image from "next/image"
 
 const Header = () => {
-  const [openDropdown, setOpenDropdown] = useState(false)
+  const [openDropdown, setOpenDropdown] = useState(true)
 
   return (
     <header className="w-full">
@@ -137,7 +137,7 @@ const Header = () => {
             >
               <ul className="text-sm text-gray-700">
                 {["Fruits", "Vegetables", "Dairy", "Snacks", "Beverages", "Bakery", "Frozen Foods", "Meat", "Household", "Personal Care"].map((item) => (
-                  <li key={item} className="px-4 py-2 hover:bg-gray-100 cursor-pointer">{item}</li>
+                  <li key={item} className="px-4 py-2 hover:bg-gray-100 cursor-pointer border-b-2 border-gray-300">{item}</li>
                 ))}
               </ul>
             </div>
