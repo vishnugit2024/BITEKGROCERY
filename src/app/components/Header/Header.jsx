@@ -162,7 +162,7 @@ const Header = () => {
                 <ul className="divide-y divide-gray-200">
                   {[
                     "Fruits",
-                    "Vegetables",
+                    "Vegetable",
                     "Dairy",
                     "Snacks",
                     "Beverages",
