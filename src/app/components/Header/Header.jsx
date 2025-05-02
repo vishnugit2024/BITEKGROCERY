@@ -114,8 +114,10 @@ const Header = () => {
               <span>Account</span>
             </div>
             <div className="text-center">
-              <LucideHeart className="mx-auto w-5 h-5" />
-              <span>Wishlist</span>
+             <Link href={"/pages/wishlist"}>
+             <LucideHeart className="mx-auto w-5 h-5" />
+             <span>Wishlist</span>
+             </Link>
             </div>
             <div className="text-center">
               <LucideShoppingCart className="mx-auto w-5 h-5" />
