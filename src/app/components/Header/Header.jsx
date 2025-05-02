@@ -122,8 +122,10 @@ const Header = () => {
               <span>Account</span>
             </div>
             <div className="text-center">
-              <LucideHeart className="mx-auto w-5 h-5" />
-              <span>Wishlist</span>
+             <Link href={"/pages/wishlist"}>
+             <LucideHeart className="mx-auto w-5 h-5" />
+             <span>Wishlist</span>
+             </Link>
             </div>
             <div className="text-center">
               <LucideShoppingCart className="mx-auto w-5 h-5" />
@@ -143,6 +145,7 @@ const Header = () => {
               onClick={() => setOpenDropdown(!openDropdown)}
               className="relative w-[250px] bg-purple-600 text-white rounded-l-lg cursor-pointer flex items-center justify-between px-4 py-3"
             >
+
               <div className="flex items-center gap-2 font-medium">
                 <LayoutDashboard className="w-5 h-5" />
                 All Categories

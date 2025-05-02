@@ -95,23 +95,23 @@ const Featureproduct = () => {
             <h2 className="text-xl font-bold text-gray-800">
               Featured Products
             </h2>
-            <p className="text-sm text-gray-500">
+            <p className="text-sm  max-w-48 md:max-w-full text-gray-500">
               Our most popular products this month
             </p>
           </div>
           <Link href="/">
-            <button className="flex items-center gap-1 border border-purple-700 text-purple-700 py-1 px-4 rounded-full text-sm hover:bg-purple-100 transition">
+            <button className="flex items-center gap-1 border border-purple-700 text-purple-700 py-1 px-2 md:px-4 rounded-full text-sm hover:bg-purple-100 transition">
               View All <ArrowRight size={16} />
             </button>
           </Link>
         </div>
 
         {/* Product Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-2 md:grid-cols-3">
           {products.map((product) => (
             <div
               key={product.id}
-              className="flex border border-gray-200 bg-white px-2"
+              className="flex md:flex-row flex-col border border-gray-200 bg-white px-2"
             >
               <div className="relative">
                 {/* Discount Badge */}
@@ -125,7 +125,7 @@ const Featureproduct = () => {
                 </div>
 
                 {/* Product Image */}
-                <div className="w-30 h-40 lg:w-50 lg:h-45 md:w-45 md:h-40 flex justify-center items-center mb-2 bg-white ">
+                <div className="w-30 h-30 lg:w-50 lg:h-45 md:w-45 md:h-40 flex justify-center m-auto items-center mb-2 bg-white ">
                   <Image
                     src={product.img}
                     alt={product.name}
@@ -157,7 +157,7 @@ const Featureproduct = () => {
                 </div>
 
                 {/* Add to Cart Button */}
-                <button className="flex items-center justify-between mt-3 w-full border border-purple-700 rounded-full py-1 px-3 text-sm text-purple-700 hover:bg-purple-100">
+                <button className="flex items-center justify-between my-3 w-full border border-purple-700 rounded-full py-1 px-3 text-sm text-purple-700 hover:bg-purple-100">
                   Add to cart <Plus size={14} />
                 </button>
               </div>

@@ -46,7 +46,7 @@ const Footer = () => {
         {/* Help */}
         <div>
           <Link href={"/"}>
-            <Image src={logo} alt="logo" className="w-30 h-auto m-auto " />
+            <Image src={logo} alt="logo" className="w-30 h-auto md:m-auto" />
           </Link>
           <div className="my-2 flex items-center gap-4">
             <Phone style={{ color: "var(--purple)" }} />{" "}
