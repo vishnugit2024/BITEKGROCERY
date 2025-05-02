@@ -13,8 +13,8 @@ import product3 from "../../Images/DowloadImage/KabuliChanaBack.png";
 import product4 from "../../Images/DowloadImage/MoongDhooli.png";
 import product5 from "../../Images/DowloadImage/MoongDhooliBack.png";
 import product6 from "../../Images/DowloadImage/Pasta.png";
-import toast from "react-hot-toast";
 import Link from "next/link";
+import toast from "react-hot-toast";
 
 const NewArrival = () => {
   const products = [

@@ -15,32 +15,37 @@ const HomeBanner = () => {
     { id: 2, img: Image2, alt: "Slide 2" },
     { id: 3, img: Image1, alt: "Slide 3" },
   ];
+
   return (
-    <>
-      <div className="mx-3">
-        <div className="w-full max-w-6xl mt-4 mr-0 ml-auto my-6">
-          <Swiper
-            modules={[Navigation, Pagination, Autoplay]}
-            spaceBetween={20}
-            slidesPerView={1}
-            navigation
-            pagination={{ clickable: true }}
-            autoplay={{ delay: 3000 }}
-            loop
-          >
-            {slides.map((slide) => (
-              <SwiperSlide key={slide.id}>
+    <section className="w-[78%] ml-auto py-3 bg-white sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        <Swiper
+          modules={[Navigation, Pagination, Autoplay]}
+          spaceBetween={20}
+          slidesPerView={1}
+          navigation
+          pagination={{ clickable: true }}
+          autoplay={{ delay: 4000 }}
+          loop
+          className="rounded-2xl overflow-hidden"
+        >
+          {slides.map((slide) => (
+            <SwiperSlide key={slide.id}>
+              <div className="relative w-full aspect-[16/9] md:aspect-[16/6]">
                 <Image
                   src={slide.img}
                   alt={slide.alt}
-                  className="w-full h-[500px] object-cover rounded-xl"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 100vw"
+                  priority
                 />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
-    </>
+    </section>
   );
 };
 
