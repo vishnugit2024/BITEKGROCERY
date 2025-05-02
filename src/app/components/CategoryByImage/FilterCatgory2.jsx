@@ -13,29 +13,37 @@ const bannerData = [
     imgSrc: filterimage4,
     link: "/category/fruits",
     alt: "Fruits Banner",
+    offervalidity: "Only this week",
+    imgtext: "Quality Eggs at an affordable price",
   },
   {
     id: 2,
     imgSrc: filterimage5,
     link: "/category/vegetables",
     alt: "Vegetables Banner",
+    offervalidity: "Only this week",
+    imgtext: "Quality Eggs at an affordable price",
   },
   {
     id: 3,
     imgSrc: filterimage6,
     link: "/category/dairy",
     alt: "Dairy Banner",
+    offervalidity: "Only this week",
+    imgtext: "Quality Eggs at an affordable price",
   },
   {
     id: 4,
     imgSrc: filterimage7,
     link: "/category/dairy",
     alt: "Dairy Banner",
+    offervalidity: "Only this week",
+    imgtext: "Quality Eggs at an affordable price",
   },
 ];
 const FilterCatgory2 = () => {
   return (
-    <div className="max-w-7xl mx-auto px-4 py-8 grid grid-cols-1 sm:grid-cols-4 gap-4">
+    <div className="max-w-7xl mx-auto px-4 py-4 grid grid-cols-1 sm:grid-cols-4 gap-4">
       {bannerData.map((item) => (
         <Link href={item.link} key={item.id} className="block group">
           <div className="relative overflow-hidden rounded-xl shadow-lg">
@@ -49,10 +57,10 @@ const FilterCatgory2 = () => {
             <div className="absolute inset-0 flex items-start justify-start p-4">
               <div className="text-black space-y-2 max-w-xs">
                 <p className="text-sm text-red-800 font-semibold">
-                  Only this week
+                 {item.offervalidity}
                 </p>
                 <h3 className="max-w-10/12 text-xl font-bold leading-tight">
-                  Quality Eggs at an affordable price
+                 {item.imgtext}
                 </h3>
                 <button className="bg-white text-black font-medium px-4 py-2 rounded-full inline-flex items-center hover:outline-1 gap-2 transition">
                   Shop Now <MoveRight size={14} />
