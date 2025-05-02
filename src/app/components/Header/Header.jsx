@@ -153,7 +153,6 @@ const Header = () => {
               }`}
             >
               <ul className="text-sm text-gray-700">
-
                 {[
                   "Fruits",
                   "Vegetables",
@@ -172,6 +171,7 @@ const Header = () => {
                   >
                     {item}
                   </li>
+                ))}
               </ul>
             </div>
           </div>

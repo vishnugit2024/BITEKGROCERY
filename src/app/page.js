@@ -10,6 +10,7 @@ import NewArrival from "./components/NewArrival/NewArrival";
 import Featureproduct from "./components/FeatureProduct/Featureproduct";
 import BestSeller from "./components/BestSeller/BestSeller";
 import Testimonail from "./components/Testimonail/Testimonail";
+import StyleBanner1 from "./components/StyleBanner/StyleBanner1";
 
 const page = () => {
   return (
@@ -23,6 +24,7 @@ const page = () => {
       <Featureproduct />
       <FilterCatgory3 />
       <BestSeller />
+      <StyleBanner1 />
       <Testimonail />
     </>
   );

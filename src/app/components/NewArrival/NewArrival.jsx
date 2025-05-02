@@ -154,7 +154,7 @@ const NewArrival = () => {
                   <Heart size={20} onClick={() => addToWishlist(product)} />
                 </div>
 
-                <div className="w-50 h-50 flex justify-center items-center mb-2 bg-white">
+                <div className="w-50 h-50 flex justify-center m-auto items-center mb-2 bg-white">
                   <Image
                     src={product.img}
                     alt={product.name}
