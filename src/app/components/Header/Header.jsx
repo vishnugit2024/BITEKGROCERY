@@ -1,5 +1,5 @@
-"use client"
-import React, { useState } from "react"
+"use client";
+import React, { useState } from "react";
 import {
   LucideUser,
   LucideHeart,
@@ -8,13 +8,13 @@ import {
   LucideChevronDown,
   LucideMapPin,
   LayoutDashboard,
-} from "lucide-react"
-import Link from "next/link"
-import logo from "../../Images/logo.jpg"
-import Image from "next/image"
+} from "lucide-react";
+import Link from "next/link";
+import logo from "../../Images/DowloadImage/logo.jpg";
+import Image from "next/image";
 
 const Header = () => {
-  const [openDropdown, setOpenDropdown] = useState(true)
+  const [openDropdown, setOpenDropdown] = useState(true);
 
   return (
     <header className="w-full">
@@ -23,9 +23,8 @@ const Header = () => {
         <div className="max-w-[1300px] mx-auto flex flex-col md:flex-row justify-between px-4 text-center md:text-left gap-2 md:gap-0">
           <b>FREE delivery & 40% Discount for next 3 orders!</b>
           <b>
-            Until the end of the sale:{" "}
-            <span className="font-bold">13</span> days{" "}
-            <span className="font-bold">12</span> hours{" "}
+            Until the end of the sale: <span className="font-bold">13</span>{" "}
+            days <span className="font-bold">12</span> hours{" "}
             <span className="font-bold">17</span> minutes{" "}
             <span className="font-bold">48</span> sec.
           </b>
@@ -49,9 +48,15 @@ const Header = () => {
                 English <LucideChevronDown className="w-4 h-4" />
               </p>
               <div className="absolute left-0 w-40 bg-white border border-gray-200 rounded shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-opacity duration-200 z-20">
-                <Link href="#" className="block px-4 py-2 hover:bg-gray-100">English</Link>
-                <Link href="#" className="block px-4 py-2 hover:bg-gray-100">Spanish</Link>
-                <Link href="#" className="block px-4 py-2 hover:bg-gray-100">Hindi</Link>
+                <Link href="#" className="block px-4 py-2 hover:bg-gray-100">
+                  English
+                </Link>
+                <Link href="#" className="block px-4 py-2 hover:bg-gray-100">
+                  Spanish
+                </Link>
+                <Link href="#" className="block px-4 py-2 hover:bg-gray-100">
+                  Hindi
+                </Link>
               </div>
             </div>
             {/* Currency */}
@@ -60,9 +65,15 @@ const Header = () => {
                 USD <LucideChevronDown className="w-4 h-4" />
               </p>
               <div className="absolute left-0 w-40 bg-white border border-gray-200 rounded shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-opacity duration-200 z-20">
-                <Link href="#" className="block px-4 py-2 hover:bg-gray-100">USD</Link>
-                <Link href="#" className="block px-4 py-2 hover:bg-gray-100">INR</Link>
-                <Link href="#" className="block px-4 py-2 hover:bg-gray-100">GBP</Link>
+                <Link href="#" className="block px-4 py-2 hover:bg-gray-100">
+                  USD
+                </Link>
+                <Link href="#" className="block px-4 py-2 hover:bg-gray-100">
+                  INR
+                </Link>
+                <Link href="#" className="block px-4 py-2 hover:bg-gray-100">
+                  GBP
+                </Link>
               </div>
             </div>
             <Link href="/">Order Tracking</Link>
@@ -127,17 +138,39 @@ const Header = () => {
               All Categories
             </div>
             <LucideChevronDown
-              className={`w-5 h-5 transition-transform duration-200 ${openDropdown ? "rotate-180" : ""}`}
+              className={`w-5 h-5 transition-transform duration-200 ${
+                openDropdown ? "rotate-180" : ""
+              }`}
             />
 
             {/* Dropdown */}
             <div
               className={`absolute top-full left-0 w-full sm:w-[300px] bg-white border border-gray-300 transition-all duration-300 ease-in-out z-30 overflow-hidden rounded-b
-              ${openDropdown ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0 pointer-events-none"}`}
+              ${
+                openDropdown
+                  ? "max-h-[500px] opacity-100"
+                  : "max-h-0 opacity-0 pointer-events-none"
+              }`}
             >
               <ul className="text-sm text-gray-700">
-                {["Fruits", "Vegetables", "Dairy", "Snacks", "Beverages", "Bakery", "Frozen Foods", "Meat", "Household", "Personal Care"].map((item) => (
-                  <li key={item} className="px-4 py-2 hover:bg-gray-100 cursor-pointer border-b-2 border-gray-300">{item}</li>
+                {[
+                  "Fruits",
+                  "Vegetables",
+                  "Dairy",
+                  "Snacks",
+                  "Beverages",
+                  "Bakery",
+                  "Frozen Foods",
+                  "Meat",
+                  "Household",
+                  "Personal Care",
+                ].map((item) => (
+                  <li
+                    key={item}
+                    className="px-4 py-2 hover:bg-gray-100 cursor-pointer border-b-2 border-gray-300"
+                  >
+                    {item}
+                  </li>
                 ))}
               </ul>
             </div>
@@ -145,7 +178,9 @@ const Header = () => {
 
           {/* Menu Links */}
           <ul className="flex flex-wrap gap-5 text-base font-medium text-gray-800">
-            <li><Link href="/">Home</Link></li>
+            <li>
+              <Link href="/">Home</Link>
+            </li>
             <li className="flex items-center gap-1 cursor-pointer">
               Shop <LucideChevronDown className="w-4 h-4" />
             </li>
@@ -158,14 +193,16 @@ const Header = () => {
             </li>
             <li className="text-red-600 font-semibold flex items-center gap-1">
               Almost Finished
-              <span className="bg-red-500 text-white text-xs px-1 rounded">SALE</span>
+              <span className="bg-red-500 text-white text-xs px-1 rounded">
+                SALE
+              </span>
               <LucideChevronDown className="w-4 h-4" />
             </li>
           </ul>
         </div>
       </nav>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

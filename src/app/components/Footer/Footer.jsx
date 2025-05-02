@@ -10,6 +10,8 @@ import {
 import payment from "../../Images/DowloadImage/paymentsecure.avif";
 import Image from "next/image";
 import Link from "next/link";
+import logo from "../../Images/DowloadImage/logo.jpg";
+
 const Footer = () => {
   return (
     <footer className="bg-gray-100 text-black text-sm">
@@ -28,7 +30,7 @@ const Footer = () => {
           <input
             type="email"
             placeholder="Enter your email address"
-            className="w-70 px-4 py-3 rounded-l-md bg-white focus:outline-purple-600"
+            className="w-70 px-4 py-3 rounded-l-md bg-white border border-gray-300 focus:outline-purple-600"
           />
           <button
             className=" text-white px-6 rounded-r-md font-semibold"
@@ -43,11 +45,10 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8">
         {/* Help */}
         <div>
-          {/* <h3 className="font-semibold mb-3">Do You Need Help ?</h3>
-          <p className="text-gray-600 mb-2">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam, ad.
-          </p> */}
-          <div className="mb-2 flex items-center gap-4">
+          <Link href={"/"}>
+            <Image src={logo} alt="logo" className="w-30 h-auto m-auto " />
+          </Link>
+          <div className="my-2 flex items-center gap-4">
             <Phone style={{ color: "var(--purple)" }} />{" "}
             <div className="flex flex-col items-left text-sm">
               <p className=" text-gray-600">Monday-Friday: 08am-9pm</p>
