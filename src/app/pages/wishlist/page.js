@@ -56,7 +56,7 @@ const Page = () => {
         {/* Body with bottom borders on each row */}
         <tbody>
           {products.map((p, idx) => (
-            <tr key={idx} className=" hover:bg-gray-100 transition shadow-sm">
+            <tr key={idx} className=" hover:bg-gray-100 transition shadow-xs">
               {/* Image */}
               <td className="py-4 pr-2">
                 <Image

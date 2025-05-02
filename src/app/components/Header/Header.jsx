@@ -120,8 +120,10 @@ const Header = () => {
              </Link>
             </div>
             <div className="text-center">
-              <LucideShoppingCart className="mx-auto w-5 h-5" />
-              <span>Your Cart</span>
+             <Link href={"/pages/cart"}>
+             <LucideShoppingCart className="mx-auto w-5 h-5" />
+             <span>Your Cart</span>
+             </Link>
             </div>
           </div>
         </div>
