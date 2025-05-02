@@ -114,8 +114,10 @@ const Header = () => {
               <span>Account</span>
             </div>
             <div className="text-center">
-              <LucideHeart className="mx-auto w-5 h-5" />
-              <span>Wishlist</span>
+             <Link href={"/pages/wishlist"}>
+             <LucideHeart className="mx-auto w-5 h-5" />
+             <span>Wishlist</span>
+             </Link>
             </div>
             <div className="text-center">
               <LucideShoppingCart className="mx-auto w-5 h-5" />
@@ -153,7 +155,6 @@ const Header = () => {
               }`}
             >
               <ul className="text-sm text-gray-700">
-
                 {[
                   "Fruits",
                   "Vegetables",
@@ -172,6 +173,7 @@ const Header = () => {
                   >
                     {item}
                   </li>
+                ))}
               </ul>
             </div>
           </div>

@@ -17,84 +17,92 @@ import testi8 from "../../Images/DowloadImage/testi8.jpg";
 import testi9 from "../../Images/DowloadImage/testi9.jpg";
 import testi10 from "../../Images/DowloadImage/testi10.jpg";
 const Testimonial = () => {
-    const testimonials = [
-        {
-          name: "Anjali Sharma",
-          rating: 4.5,
-          count: 58,
-          message: "I regularly order groceries for my family — everything is always fresh and delivered on time.",
-          image: testi1,
-        },
-        {
-          name: "Priya Verma",
-          rating: 4,
-          count: 46,
-          message: "Very easy to find daily essentials. Prices are good and customer support is helpful.",
-          image: testi2,
-        },
-        {
-          name: "Rani Mehra",
-          rating: 4.2,
-          count: 51,
-          message: "Quality of vegetables and fruits is much better than local market. Highly recommended.",
-          image: testi3,
-        },
-        {
-          name: "Sunita Rani",
-          rating: 3.8,
-          count: 39,
-          message: "Sometimes delivery is late, but overall a great experience with wide variety of products.",
-          image: testi4,
-        },
-        {
-          name: "Karan Patel",
-          rating: 4,
-          count: 44,
-          message: "This is my go-to site for monthly grocery shopping. Good offers and fast delivery.",
-          image: testi5,
-        },
-        {
-          name: "Meena Joshi",
-          rating: 4.7,
-          count: 62,
-          message: "Loved the dry fruits quality. Packaging was neat and clean.",
-          image: testi6,
-        },
-        {
-          name: "Nikhil Das",
-          rating: 3.9,
-          count: 41,
-          message: "Nice variety of organic products. Would love faster delivery in rural areas.",
-          image: testi7,
-        },
-        {
-          name: "Anjali Gupta",
-          rating: 4.6,
-          count: 59,
-          message: "Amazing discounts during festivals! Very happy with my purchase.",
-          image: testi8,
-        },
-        {
-          name: "Rajesh Yadav",
-          rating: 4,
-          count: 50,
-          message: "Customer service is responsive. Ordered multiple times without any issues.",
-          image: testi9,
-        },
-        {
-          name: "Sneha Iyer",
-          rating: 3.5,
-          count: 36,
-          message: "Good experience overall, just wish they added more South Indian items.",
-          image: testi10,
-        },
-      ];
-      
+  const testimonials = [
+    {
+      name: "Anjali Sharma",
+      rating: 4.5,
+      count: 58,
+      message:
+        "I regularly order groceries for my family — everything is always fresh and delivered on time.",
+      image: testi1,
+    },
+    {
+      name: "Priya Verma",
+      rating: 4,
+      count: 46,
+      message:
+        "Very easy to find daily essentials. Prices are good and customer support is helpful.",
+      image: testi2,
+    },
+    {
+      name: "Rani Mehra",
+      rating: 4.2,
+      count: 51,
+      message:
+        "Quality of vegetables and fruits is much better than local market. Highly recommended.",
+      image: testi3,
+    },
+    {
+      name: "Sunita Rani",
+      rating: 3.8,
+      count: 39,
+      message:
+        "Sometimes delivery is late, but overall a great experience with wide variety of products.",
+      image: testi4,
+    },
+    {
+      name: "Karan Patel",
+      rating: 4,
+      count: 44,
+      message:
+        "This is my go-to site for monthly grocery shopping. Good offers and fast delivery.",
+      image: testi5,
+    },
+    {
+      name: "Meena Joshi",
+      rating: 4.7,
+      count: 62,
+      message: "Loved the dry fruits quality. Packaging was neat and clean.",
+      image: testi6,
+    },
+    {
+      name: "Nikhil Das",
+      rating: 3.9,
+      count: 41,
+      message:
+        "Nice variety of organic products. Would love faster delivery in rural areas.",
+      image: testi7,
+    },
+    {
+      name: "Anjali Gupta",
+      rating: 4.6,
+      count: 59,
+      message:
+        "Amazing discounts during festivals! Very happy with my purchase.",
+      image: testi8,
+    },
+    {
+      name: "Rajesh Yadav",
+      rating: 4,
+      count: 50,
+      message:
+        "Customer service is responsive. Ordered multiple times without any issues.",
+      image: testi9,
+    },
+    {
+      name: "Sneha Iyer",
+      rating: 3.5,
+      count: 36,
+      message:
+        "Good experience overall, just wish they added more South Indian items.",
+      image: testi10,
+    },
+  ];
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-4">
       <div className="mb-4">
-        <h2 className="text-lg font-semibold text-gray-800">Our Customers</h2>
+        <h2 className="text-xl font-bold text-gray-800">Our Customers</h2>
         <p className="text-sm text-gray-500">
           Honest feedback from our valued customers.
         </p>

@@ -2,6 +2,8 @@ use this insted of container
 
 max-w-7xl mx-auto
 
+    <div className="max-w-7xl mx-auto px-4 py-4">
+
 ---
 
  <div className="mt-8 flex justify-around align-baseline">
