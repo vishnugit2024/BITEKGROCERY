@@ -21,7 +21,7 @@ import { Typewriter } from 'react-simple-typewriter';
 import { motion } from "framer-motion";
 
 const Header = () => {
-  const [openDropdown, setOpenDropdown] = useState(true);
+  const [openDropdown, setOpenDropdown] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [open, setOpen] = useState(false);
   const [isAlmostOpen, setIsAlmostOpen] = useState(false);
@@ -85,7 +85,7 @@ const Header = () => {
       >
         <div className="mx-auto flex flex-wrap justify-between items-center gap-3 text-sm text-gray-600">
           <div className="flex flex-wrap gap-4 items-center">
-            <Link href="/">About Us</Link>
+            <Link href="/pages/about">About Us</Link>
             <Link href="/">My Account</Link>
             <Link href="/">Wishlist</Link>
             <span>|</span>
@@ -134,7 +134,7 @@ const Header = () => {
         </div>
       </motion.div>
       <motion.div
-        className="max-w-7xl px-4 mx-auto py-4 hidden md:block"
+        className="max-w-7xl  mx-auto py-4 hidden md:block"
         initial={{ y: 30, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
@@ -204,13 +204,13 @@ const Header = () => {
 
       {/* Navigation */}
       <motion.div
-        className="max-w-7xl mx-auto hidden md:block px-4"
+        className="max-w-7xl border-b border-gray-200 mx-auto hidden md:block"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
         <motion.nav
-          className="bg-white border border-gray-200 rounded-lg shadow-sm"
+          className="bg-white  rounded-lg"
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
@@ -219,9 +219,8 @@ const Header = () => {
 
             {/* All Categories */}
             <div
-              style={{ backgroundColor: "var(--purple)" }}
               onClick={() => setOpenDropdown(!openDropdown)}
-              className="relative w-[250px] text-white cursor-pointer flex items-center justify-between px-4 py-3"
+              className="relative w-[250px] border border-b-0 border-gray-200 rounded-t-[10px] rounded-b-none cursor-pointer flex items-center justify-between px-4 py-3"
             >
               <div className="flex items-center gap-2 font-medium">
                 <LayoutDashboard className="w-5 h-5" />
@@ -287,7 +286,7 @@ const Header = () => {
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.5 + index * 0.1 }}
                 >
-                  <Link href="/" className="flex items-center gap-1">{item}</Link>
+                  <Link href="/pages/contact" className="flex items-center gap-1">{item}</Link>
                 </motion.li>
               ))}
 
@@ -411,7 +410,7 @@ const Header = () => {
           <li className="border-b-1 border-gray-300 font-medium"><Link href="/">Fruits & Vegetables</Link></li>
           <li className="border-b-1 border-gray-300 font-medium"><Link href="/">Beverages</Link></li>
           <li className="border-b-1 border-gray-300 font-medium"><Link href="/">Blog</Link></li>
-          <li className="border-b-1 border-gray-300 font-medium"><Link href="/">Contact</Link></li>
+          <li className="border-b-1 border-gray-300 font-medium"><Link href="/pages/contact">Contact</Link></li>
           <li className="border-b-1 border-gray-300 font-medium"><Link href="/">Trending Products</Link></li>
           <li className="border-b-1 border-gray-300 font-medium"><Link href="/">Almost Finished</Link></li>
         </ul>
@@ -425,10 +424,10 @@ const Header = () => {
               <Link href="/">Order Tracking</Link>
             </li>
             <li>
-              <Link href="/">About Us</Link>
+              <Link href="/pages/about">About Us</Link>
             </li>
             <li>
-              <Link href="/">Contact Us</Link>
+              <Link href="/pages/contact">Contact Us</Link>
             </li>
           </ul>
         </div>
