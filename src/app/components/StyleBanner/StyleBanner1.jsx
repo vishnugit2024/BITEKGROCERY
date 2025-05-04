@@ -31,11 +31,10 @@ const StyleBanner1 = () => {
               life and makes it better
             </p>
             <Link href="/">
-            <button className="bg-white text-black font-medium px-4 py-2 rounded-full inline-flex items-center gap-2 hover:bg-gray-100 transition">
-              Shop Now <MoveRight size={14} />
-            </button>
+              <button className="bg-white text-black font-medium px-4 py-2 rounded-full inline-flex items-center gap-2 hover:bg-gray-100 transition">
+                Shop Now <MoveRight size={14} />
+              </button>
             </Link>
-            
           </div>
         </div>
       </div>
