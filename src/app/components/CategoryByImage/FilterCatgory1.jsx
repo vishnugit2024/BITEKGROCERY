@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -5,6 +6,7 @@ import filterimage1 from "../../Images/DowloadImage/filterimage1.jpg";
 import filterimage2 from "../../Images/DowloadImage/filterimage2.jpg";
 import filterimage3 from "../../Images/DowloadImage/filterimage3.jpg";
 import { MoveRight } from "lucide-react";
+import { motion, useInView } from "framer-motion";  // Importing the necessary hooks
 
 const bannerData = [
   {
@@ -38,7 +40,14 @@ const FilterCatgory1 = () => {
     <div className="max-w-7xl mx-auto px-4 py-4 grid grid-cols-1 sm:grid-cols-3 gap-6">
       {bannerData.map((item) => (
         <Link href={item.link} key={item.id} className="block group">
-          <div className="relative overflow-hidden rounded-xl shadow-lg">
+          {/* Using motion.div to animate the element when in view */}
+          <motion.div
+            className="relative overflow-hidden rounded-xl shadow-lg"
+            initial={{ opacity: 0, y: 50 }}  // Initial hidden state
+            whileInView={{ opacity: 1, y: 0 }}  // State when in view
+            viewport={{ once: true, amount: 0.3 }}  // Trigger animation when 30% of the element is in view
+            transition={{ duration: 0.6 }}  // Animation duration
+          >
             <Image
               src={item.imgSrc}
               alt={item.alt}
@@ -59,7 +68,7 @@ const FilterCatgory1 = () => {
                 </button>
               </div>
             </div>
-          </div>
+          </motion.div>
         </Link>
       ))}
     </div>

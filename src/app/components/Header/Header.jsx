@@ -11,34 +11,78 @@ import {
   ShoppingCart,
   PhoneCall,
   Send,
+  ChevronDown,
 } from "lucide-react";
 import Link from "next/link";
 import logo from "../../Images/DowloadImage/logo.jpg";
 import Image from "next/image";
 import { LucideMenu, LucideX } from "lucide-react";
+import { Typewriter } from 'react-simple-typewriter';
+import { motion } from "framer-motion";
 
 const Header = () => {
   const [openDropdown, setOpenDropdown] = useState(true);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [isAlmostOpen, setIsAlmostOpen] = useState(false);
+  // Dropdown items
 
+  const trendingItems = [
+    { label: "Today", href: "/trending/today" },
+    { label: "This Week", href: "/trending/week" },
+    { label: "This Month", href: "/trending/month" },
+  ];
+  const almostFinishedItems = [
+    { label: "Flash Deals", href: "/deals/flash" },
+    { label: "Last 24 Hours", href: "/deals/last-24-hours" },
+    { label: "Clearance Sale", href: "/deals/clearance" },
+  ];
   return (
     <header className="w-full">
       {/* Top Strip */}
-      <div className="bg-purple-700 text-white text-sm py-3">
-        <div className="max-w-[1300px] mx-auto flex flex-col md:flex-row justify-between px-4 text-center md:text-left gap-2 md:gap-0">
-          <b>FREE delivery & 40% Discount for next 3 orders!</b>
+      <div style={{ backgroundColor: "var(--purple)" }} className=" text-white text-sm py-3">
+        <div className="max-w-[1300px] mx-auto flex flex-col md:flex-row justify-between px-4 text-center md:text-left gap-2 md:gap-0 p2-4">
           <b>
-            Until the end of the sale: <span className="font-bold">13</span>{" "}
-            days <span className="font-bold">12</span> hours{" "}
-            <span className="font-bold">17</span> minutes{" "}
-            <span className="font-bold">48</span> sec.
+            <Typewriter
+              words={[
+                'FREE delivery on all orders!',
+                '40% Discount for next 3 orders!',
+                'Limited Time Offer — Grab Now!',
+              ]}
+              loop={0} // 0 = infinite loop
+              cursor
+              cursorStyle="|"
+              typeSpeed={60}
+              deleteSpeed={40}
+              delaySpeed={2000}
+            />
+          </b>
+
+          <b>
+            <Typewriter
+              words={[
+                'Sale ends in: 13 days 12 hrs 17 mins 48 sec.',
+                'Hurry! Only a few days left!',
+                'Countdown is running fast!',
+              ]}
+              loop={0}
+              cursor
+              cursorStyle="|"
+              typeSpeed={60}
+              deleteSpeed={40}
+              delaySpeed={2000}
+            />
           </b>
         </div>
       </div>
 
       {/* Secondary Bar */}
-      <div className="border-b border-gray-300 py-3 px-4 sm:px-6 lg:px-8 hidden md:block">
-
+      <motion.div
+        className="border-b border-gray-300 py-3 px-4 sm:px-6 lg:px-8 hidden md:block"
+        initial={{ y: -20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+      >
         <div className="mx-auto flex flex-wrap justify-between items-center gap-3 text-sm text-gray-600">
           <div className="flex flex-wrap gap-4 items-center">
             <Link href="/">About Us</Link>
@@ -47,6 +91,7 @@ const Header = () => {
             <span>|</span>
             <span>We deliver to you every day from</span>
           </div>
+
           <div className="flex items-center gap-4">
             {/* Language */}
             <div className="relative group">
@@ -65,6 +110,7 @@ const Header = () => {
                 </Link>
               </div>
             </div>
+
             {/* Currency */}
             <div className="relative group">
               <p className="cursor-pointer flex items-center gap-1">
@@ -82,27 +128,41 @@ const Header = () => {
                 </Link>
               </div>
             </div>
+
             <Link href="/">Order Tracking</Link>
           </div>
         </div>
-      </div>
-
-      {/* Logo + Search + Icons */}
-      <div className="max-w-7xl mx-auto py-4 hidden md:block">
+      </motion.div>
+      <motion.div
+        className="max-w-7xl px-4 mx-auto py-4 hidden md:block"
+        initial={{ y: 30, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
         <div className="mx-auto flex flex-wrap justify-between items-center gap-4">
           {/* Logo & Location */}
-          <div className="flex items-center gap-4">
-            <Link href="/" >
+          <motion.div
+            className="flex items-center gap-4"
+            initial={{ x: -30, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ delay: 0.1 }}
+          >
+            <Link href="/">
               <Image src={logo} alt="Logo" className="w-24 h-auto" />
             </Link>
             <div className="flex items-center gap-1 text-gray-700 text-sm">
               <LucideMapPin className="w-9 h-9 bg-gray-300 rounded-full p-2" />
               Deliver to <span className="ml-1 font-medium">all</span>
             </div>
-          </div>
+          </motion.div>
 
           {/* Search */}
-          <div className="flex-1 max-w-2xl mx-2 w-full">
+          <motion.div
+            className="flex-1 max-w-2xl mx-2 w-full"
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.3 }}
+          >
             <div className="flex items-center bg-gray-100 rounded-md overflow-hidden">
               <input
                 type="text"
@@ -113,58 +173,79 @@ const Header = () => {
                 <LucideSearch className="w-5 h-5" />
               </button>
             </div>
-          </div>
+          </motion.div>
 
           {/* Icons */}
-          <div className="flex gap-4 items-center text-sm">
+          <motion.div
+            className="flex gap-4 items-center text-sm"
+            initial={{ x: 30, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ delay: 0.5 }}
+          >
             <div className="text-center">
               <LucideUser className="mx-auto w-5 h-5" />
               <span>Account</span>
             </div>
             <div className="text-center">
-             <Link href={"/pages/wishlist"}>
-             <LucideHeart className="mx-auto w-5 h-5" />
-             <span>Wishlist</span>
-             </Link>
+              <Link href="/pages/wishlist">
+                <LucideHeart className="mx-auto w-5 h-5" />
+                <span>Wishlist</span>
+              </Link>
             </div>
             <div className="text-center">
-             <Link href={"/pages/cart"}>
-             <LucideShoppingCart className="mx-auto w-5 h-5" />
-             <span>Your Cart</span>
-             </Link>
+              <Link href="/pages/cart">
+                <LucideShoppingCart className="mx-auto w-5 h-5" />
+                <span>Your Cart</span>
+              </Link>
             </div>
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Navigation */}
-      <div className="max-w-7xl mx-auto hidden md:block px-4">
-        <nav className="bg-white border border-gray-200 rounded-lg shadow-sm mt-4">
+      <motion.div
+        className="max-w-7xl mx-auto hidden md:block px-4"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
+        <motion.nav
+          className="bg-white border border-gray-200 rounded-lg shadow-sm"
+          initial={{ y: -20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+        >
           <div className="flex items-stretch">
 
             {/* All Categories */}
             <div
+              style={{ backgroundColor: "var(--purple)" }}
               onClick={() => setOpenDropdown(!openDropdown)}
-              className="relative w-[250px] bg-purple-600 text-white rounded-l-lg cursor-pointer flex items-center justify-between px-4 py-3"
+              className="relative w-[250px] text-white cursor-pointer flex items-center justify-between px-4 py-3"
             >
-
               <div className="flex items-center gap-2 font-medium">
                 <LayoutDashboard className="w-5 h-5" />
                 All Categories
               </div>
-              <LucideChevronDown
-                className={`w-5 h-5 transition-transform duration-200 ${openDropdown ? "rotate-180" : ""
-                  }`}
+              <ChevronDown
+                className={`w-5 h-5 transition-transform duration-200 ${openDropdown ? "rotate-180" : ""}`}
               />
-
               {/* Dropdown */}
-              <div
-                className={`absolute top-full left-0 w-full bg-white text-gray-800 border border-t-0 rounded-b shadow-md z-30 overflow-hidden transition-all duration-300 ease-in-out ${openDropdown
-                    ? "max-h-[500px] opacity-100"
-                    : "max-h-0 opacity-0 pointer-events-none"
+              <motion.div
+                className={`absolute top-full left-0 w-full bg-white text-gray-800 border-1 border-gray-200 border-t-0 rounded-b z-30 overflow-hidden transition-all duration-300 ease-in-out ${openDropdown
+                  ? "max-h-[500px] opacity-100"
+                  : "max-h-0 opacity-0 pointer-events-none"
                   }`}
+                initial={{ maxHeight: 0, opacity: 0 }}
+                animate={{ maxHeight: openDropdown ? 500 : 0, opacity: openDropdown ? 1 : 0 }}
+                transition={{ duration: 0.3 }}
               >
-                <ul className="divide-y divide-gray-200">
+                <motion.ul
+                  className="divide-y divide-gray-200"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.2, duration: 0.3 }}
+                >
                   {[
                     "Fruits",
                     "Vegetable",
@@ -177,43 +258,112 @@ const Header = () => {
                     "Household",
                     "Personal Care",
                   ].map((item) => (
-                    <li
+                    <motion.li
                       key={item}
                       className="px-4 py-3 hover:bg-purple-50 cursor-pointer"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 0.3 }}
                     >
-                      {item}
-                    </li>
+                      <Link className="font-medium" href="/pages/wishlist">{item}</Link>
+                    </motion.li>
                   ))}
-                </ul>
-              </div>
+                </motion.ul>
+              </motion.div>
             </div>
 
             {/* Menu Links */}
-            <ul className="flex-1 flex items-center justify-between px-6 py-3 text-gray-700 font-medium text-base">
-              <li>
-                <Link href="/" className="hover:text-purple-600 transition">Home</Link>
-              </li>
-              <li className="flex items-center gap-1 hover:text-purple-600 cursor-pointer transition">
-                Shop <LucideChevronDown className="w-4 h-4" />
-              </li>
-              <li className="hover:text-purple-600 transition">Fruits & Vegetables</li>
-              <li className="hover:text-purple-600 transition">Beverages</li>
-              <li className="hover:text-purple-600 transition">Blog</li>
-              <li className="hover:text-purple-600 transition">Contact</li>
-              <li className="text-red-600 flex items-center gap-1 cursor-pointer hover:underline">
-                Trending <LucideChevronDown className="w-4 h-4" />
-              </li>
-              <li className="text-red-600 font-semibold flex items-center gap-2 cursor-pointer">
-                Almost Finished
-                <span className="bg-red-500 text-white text-xs px-2 py-0.5 rounded">
-                  SALE
-                </span>
-                <LucideChevronDown className="w-4 h-4" />
-              </li>
-            </ul>
+            <motion.ul
+              className="flex-1 flex items-center justify-between px-6 py-3 text-gray-700 font-medium text-base"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.3, delay: 0.4 }}
+            >
+              {["Home", "Shop", "Fruits & Vegetables", "Beverages", "Blog", "Contact"].map((item, index) => (
+                <motion.li
+                  key={index}
+                  className="hover:text-purple-600 transition font-bold"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.5 + index * 0.1 }}
+                >
+                  <Link href="/" className="flex items-center gap-1">{item}</Link>
+                </motion.li>
+              ))}
+
+              {/* Trending Dropdown */}
+              <motion.li
+                className="relative"
+                onMouseEnter={() => setOpen(true)}
+                onMouseLeave={() => setOpen(false)}
+              >
+                <div className="flex items-center gap-1 text-red-600 font-bold cursor-pointer">
+                  <Link href="/" className="flex items-center gap-1">
+                    Trending <ChevronDown className="w-4 h-4" />
+                  </Link>
+                </div>
+
+                {/* Dropdown */}
+                <motion.ul
+                  className={`absolute top-full left-0 mt-2 w-40 bg-white shadow-lg rounded-md overflow-hidden transition-all duration-200 z-10 ${open ? "opacity-100 visible" : "opacity-0 invisible"
+                    }`}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: open ? 1 : 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  {trendingItems.map((item) => (
+                    <motion.li key={item.href}>
+                      <Link
+                        href={item.href}
+                        className="block px-4 py-2 hover:bg-gray-100"
+                      >
+                        {item.label}
+                      </Link>
+                    </motion.li>
+                  ))}
+                </motion.ul>
+              </motion.li>
+
+              {/* Almost Finished Dropdown */}
+              <motion.li
+                className="relative"
+                onMouseEnter={() => setIsAlmostOpen(true)}
+                onMouseLeave={() => setIsAlmostOpen(false)}
+              >
+                <div className="flex items-center gap-2 text-red-600 font-bold cursor-pointer">
+                  <Link href="/" className="flex items-center gap-2">
+                    Almost Finished
+                    <span className="bg-red-500 text-white text-xs px-2 py-0.5 rounded">
+                      SALE
+                    </span>
+                    <ChevronDown className="w-4 h-4" />
+                  </Link>
+                </div>
+
+                {/* Dropdown */}
+                <motion.ul
+                  className={`absolute top-full left-0 mt-2 w-48 bg-white shadow-lg rounded-md overflow-hidden transition-all duration-200 z-10 ${isAlmostOpen ? "opacity-100 visible" : "opacity-0 invisible"
+                    }`}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: isAlmostOpen ? 1 : 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  {almostFinishedItems.map((item) => (
+                    <motion.li key={item.href}>
+                      <Link
+                        href={item.href}
+                        className="block px-4 py-2 hover:bg-gray-100"
+                      >
+                        {item.label}
+                      </Link>
+                    </motion.li>
+                  ))}
+                </motion.ul>
+              </motion.li>
+            </motion.ul>
           </div>
-        </nav>
-      </div>
+        </motion.nav>
+      </motion.div>
 
 
 
