@@ -17,7 +17,7 @@ import Link from "next/link";
 import logo from "../../Images/DowloadImage/logo.jpg";
 import Image from "next/image";
 import { LucideMenu, LucideX } from "lucide-react";
-import { Typewriter } from 'react-simple-typewriter';
+import { Typewriter } from "react-simple-typewriter";
 import { motion } from "framer-motion";
 
 const Header = () => {
@@ -40,14 +40,17 @@ const Header = () => {
   return (
     <header className="w-full">
       {/* Top Strip */}
-      <div style={{ backgroundColor: "var(--purple)" }} className=" text-white text-sm py-3">
+      <div
+        style={{ backgroundColor: "var(--purple)" }}
+        className=" text-white text-sm py-3"
+      >
         <div className="max-w-[1300px] mx-auto flex flex-col md:flex-row justify-between px-4 text-center md:text-left gap-2 md:gap-0 p2-4">
           <b>
             <Typewriter
               words={[
-                'FREE delivery on all orders!',
-                '40% Discount for next 3 orders!',
-                'Limited Time Offer — Grab Now!',
+                "FREE delivery on all orders!",
+                "40% Discount for next 3 orders!",
+                "Limited Time Offer — Grab Now!",
               ]}
               loop={0} // 0 = infinite loop
               cursor
@@ -61,9 +64,9 @@ const Header = () => {
           <b>
             <Typewriter
               words={[
-                'Sale ends in: 13 days 12 hrs 17 mins 48 sec.',
-                'Hurry! Only a few days left!',
-                'Countdown is running fast!',
+                "Sale ends in: 13 days 12 hrs 17 mins 48 sec.",
+                "Hurry! Only a few days left!",
+                "Countdown is running fast!",
               ]}
               loop={0}
               cursor
@@ -86,7 +89,7 @@ const Header = () => {
         <div className="mx-auto flex flex-wrap justify-between items-center gap-3 text-sm text-gray-600">
           <div className="flex flex-wrap gap-4 items-center">
             <Link href="/pages/about">About Us</Link>
-            <Link href="/">My Account</Link>
+            <Link href="/pages/login">My Account</Link>
             <Link href="/">Wishlist</Link>
             <span>|</span>
             <span>We deliver to you every day from</span>
@@ -183,8 +186,10 @@ const Header = () => {
             transition={{ delay: 0.5 }}
           >
             <div className="text-center">
-              <LucideUser className="mx-auto w-5 h-5" />
-              <span>Account</span>
+              <Link href={"/pages/login"}>
+                <LucideUser className="mx-auto w-5 h-5" />
+                <span>Account</span>
+              </Link>
             </div>
             <div className="text-center">
               <Link href="/pages/wishlist">
@@ -216,7 +221,6 @@ const Header = () => {
           transition={{ duration: 0.5, ease: "easeOut" }}
         >
           <div className="flex items-stretch">
-
             {/* All Categories */}
             <div
               onClick={() => setOpenDropdown(!openDropdown)}
@@ -227,16 +231,22 @@ const Header = () => {
                 All Categories
               </div>
               <ChevronDown
-                className={`w-5 h-5 transition-transform duration-200 ${openDropdown ? "rotate-180" : ""}`}
+                className={`w-5 h-5 transition-transform duration-200 ${
+                  openDropdown ? "rotate-180" : ""
+                }`}
               />
               {/* Dropdown */}
               <motion.div
-                className={`absolute top-full left-0 w-full bg-white text-gray-800 border-1 border-gray-200 border-t-0 rounded-b z-30 overflow-hidden transition-all duration-300 ease-in-out ${openDropdown
-                  ? "max-h-[500px] opacity-100"
-                  : "max-h-0 opacity-0 pointer-events-none"
-                  }`}
+                className={`absolute top-full left-0 w-full bg-white text-gray-800 border-1 border-gray-200 border-t-0 rounded-b z-30 overflow-hidden transition-all duration-300 ease-in-out ${
+                  openDropdown
+                    ? "max-h-[500px] opacity-100"
+                    : "max-h-0 opacity-0 pointer-events-none"
+                }`}
                 initial={{ maxHeight: 0, opacity: 0 }}
-                animate={{ maxHeight: openDropdown ? 500 : 0, opacity: openDropdown ? 1 : 0 }}
+                animate={{
+                  maxHeight: openDropdown ? 500 : 0,
+                  opacity: openDropdown ? 1 : 0,
+                }}
                 transition={{ duration: 0.3 }}
               >
                 <motion.ul
@@ -264,7 +274,9 @@ const Header = () => {
                       animate={{ opacity: 1 }}
                       transition={{ delay: 0.3 }}
                     >
-                      <Link className="font-medium" href="/pages/wishlist">{item}</Link>
+                      <Link className="font-medium" href="/pages/wishlist">
+                        {item}
+                      </Link>
                     </motion.li>
                   ))}
                 </motion.ul>
@@ -278,7 +290,14 @@ const Header = () => {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.3, delay: 0.4 }}
             >
-              {["Home", "Shop", "Fruits & Vegetables", "Beverages", "Blog", "Contact"].map((item, index) => (
+              {[
+                "Home",
+                "Shop",
+                "Fruits & Vegetables",
+                "Beverages",
+                "Blog",
+                "Contact",
+              ].map((item, index) => (
                 <motion.li
                   key={index}
                   className="hover:text-purple-600 transition font-bold"
@@ -304,8 +323,9 @@ const Header = () => {
 
                 {/* Dropdown */}
                 <motion.ul
-                  className={`absolute top-full left-0 mt-2 w-40 bg-white shadow-lg rounded-md overflow-hidden transition-all duration-200 z-10 ${open ? "opacity-100 visible" : "opacity-0 invisible"
-                    }`}
+                  className={`absolute top-full left-0 mt-2 w-40 bg-white shadow-lg rounded-md overflow-hidden transition-all duration-200 z-10 ${
+                    open ? "opacity-100 visible" : "opacity-0 invisible"
+                  }`}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: open ? 1 : 0 }}
                   transition={{ duration: 0.3 }}
@@ -341,8 +361,9 @@ const Header = () => {
 
                 {/* Dropdown */}
                 <motion.ul
-                  className={`absolute top-full left-0 mt-2 w-48 bg-white shadow-lg rounded-md overflow-hidden transition-all duration-200 z-10 ${isAlmostOpen ? "opacity-100 visible" : "opacity-0 invisible"
-                    }`}
+                  className={`absolute top-full left-0 mt-2 w-48 bg-white shadow-lg rounded-md overflow-hidden transition-all duration-200 z-10 ${
+                    isAlmostOpen ? "opacity-100 visible" : "opacity-0 invisible"
+                  }`}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: isAlmostOpen ? 1 : 0 }}
                   transition={{ duration: 0.3 }}
@@ -364,9 +385,6 @@ const Header = () => {
         </motion.nav>
       </motion.div>
 
-
-
-
       {/* Mobile responsive navbar */}
       <div className="flex items-center justify-between p-2 md:hidden bg-white border-b border-gray-300">
         <button
@@ -376,28 +394,29 @@ const Header = () => {
           <LucideMenu className="w-6 h-6" />
         </button>
 
-        <Link href="/" >
+        <Link href="/">
           <Image src={logo} alt="Logo" className="w-24 h-auto" />
         </Link>
 
-        <Link className="cart-responsive" href="/" >
+        <Link className="cart-responsive" href="/">
           <ShoppingCart />
         </Link>
-
       </div>
       {/* Overlay */}
       <div
-        className={`fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity duration-300 ${isSidebarOpen ? "opacity-100 visible" : "opacity-0 invisible"
-          }`}
+        className={`fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity duration-300 ${
+          isSidebarOpen ? "opacity-100 visible" : "opacity-0 invisible"
+        }`}
         onClick={() => setIsSidebarOpen(false)}
       ></div>
       {/* Sidebar Panel */}
       <div
-        className={`fixed top-0 left-0 w-full h-full bg-white shadow-lg z-50 p-3 transition-transform duration-300 transform ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-          }`}
+        className={`fixed top-0 left-0 w-full h-full bg-white shadow-lg z-50 p-3 transition-transform duration-300 transform ${
+          isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
       >
         <div className="flex justify-between items-center mb-6">
-          <Link href="/" >
+          <Link href="/">
             <Image src={logo} alt="Logo" className="w-24 h-auto" />
           </Link>
           <button onClick={() => setIsSidebarOpen(false)}>
@@ -413,6 +432,7 @@ const Header = () => {
           <li className="border-b-1 border-gray-300 font-medium"><Link href="/pages/contact">Contact</Link></li>
           <li className="border-b-1 border-gray-300 font-medium"><Link href="/">Trending Products</Link></li>
           <li className="border-b-1 border-gray-300 font-medium"><Link href="/">Almost Finished</Link></li>
+
         </ul>
         <div className="mt-5">
           <p className="font-bold text-gray-400">Bitek Mart Helpers</p>
@@ -435,18 +455,33 @@ const Header = () => {
           <p className="font-bold text-gray-400">Contact Details</p>
           <ul>
             <li className="mb-4">
-              <Link className="flex gap-2" target="_blank" href="tell:9319846114"><PhoneCall /> 9319-846-114</Link>
-              <div><span>You can call anytime front 9am to 6pm.</span></div>
+              <Link
+                className="flex gap-2"
+                target="_blank"
+                href="tell:9319846114"
+              >
+                <PhoneCall /> 9319-846-114
+              </Link>
+              <div>
+                <span>You can call anytime front 9am to 6pm.</span>
+              </div>
             </li>
             <li>
-              <Link className="flex gap-2" target="_blank" href="mailto:testing@gmail.com"><Send /> testing@gmail.com</Link>
-              <div><span>You can call anytime front 9am to 6pm.</span></div>
+              <Link
+                className="flex gap-2"
+                target="_blank"
+                href="mailto:testing@gmail.com"
+              >
+                <Send /> testing@gmail.com
+              </Link>
+              <div>
+                <span>You can call anytime front 9am to 6pm.</span>
+              </div>
             </li>
           </ul>
         </div>
       </div>
     </header>
-
   );
 };
 
