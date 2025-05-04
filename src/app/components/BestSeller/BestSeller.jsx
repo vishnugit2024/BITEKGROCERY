@@ -95,7 +95,7 @@ const BestSeller = () => {
           </p>
         </div>
         <Link href="/">
-          <button className="flex items-center gap-1 border border-purple-700 text-purple-700 py-1 px-2 md:px-4 rounded-full text-sm hover:bg-purple-100 transition">
+          <button className="view-all-btn">
             View All <ArrowRight size={16} />
           </button>
         </Link>
@@ -159,7 +159,7 @@ const BestSeller = () => {
                 </div>
 
                 {/* Add to Cart Button */}
-                <button className="flex items-center justify-between mt-3 w-full border border-purple-700 rounded-full py-1 px-3 text-sm text-purple-700 hover:bg-purple-100">
+                <button className="add-to-cart-btn">
                   Add to cart <Plus size={14} />
                 </button>
               </div>

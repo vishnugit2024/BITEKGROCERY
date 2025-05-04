@@ -179,13 +179,8 @@ const Footer = () => {
             </Link>
           </div>
           <div className="mt-8 flex justify-around align-baseline">
-            <button
-              className="py-3 px-6 text-white rounded font-semibold"
-              style={{ backgroundColor: "var(--purple)" }}
-            >
-              LogIn
-            </button>
-            <button className="py-3 px-6 bg-black text-white rounded font-semibold">
+            <button className="purple-btn">LogIn</button>
+            <button className="black-btn">
               SignUP
             </button>
           </div>

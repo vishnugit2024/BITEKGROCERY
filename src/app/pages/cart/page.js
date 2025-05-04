@@ -65,17 +65,10 @@ export default function CartPage() {
 
     if (couponCode in validCoupons) {
       setDiscount(validCoupons[couponCode]);
-      toast({
-        title: "Coupon applied",
-        description: `${couponCode} has been applied to your order.`,
-      });
+      toast.success(`Coupon ${couponCode} applied successfully`);
     } else {
       setDiscount(0);
-      toast({
-        title: "Invalid coupon",
-        description: "The coupon code is invalid.",
-        variant: "destructive",
-      });
+      toast.error("Invalid coupon code");
     }
   };
 
@@ -235,10 +228,7 @@ export default function CartPage() {
                 onChange={(e) => setCouponCode(e.target.value)}
                 className="w-full border border-gray-300 focus:outline-purple-600 rounded px-3 py-2"
               />
-              <button
-                type="submit"
-                className="w-full bg-purple-800 text-white py-2 rounded hover:bg-purple-900"
-              >
+              <button type="submit" className="w-full purple-btn">
                 Apply Coupon
               </button>
             </form>

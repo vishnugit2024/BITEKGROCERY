@@ -1,7 +1,68 @@
 @import "tailwindcss";
 :root {
   --purple: #59168b;
+  --light-purple: #eee2f8;
   --black: #000;
   --red: red;
   --gray: #f3f4f6;
+}
+
+.purple-btn {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--purple);
+  color: #fff;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease-in-out;
+  font-weight: 600;
+}
+
+.black-btn {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--black);
+  color: #fff;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease-in-out;
+  font-weight: 600;
+}
+
+.view-all-btn {
+  display: flex;
+  align-items: center;
+  border: var(--purple) solid 1px;
+  color: var(--purple);
+  border-radius: 1rem;
+  padding: 0.25rem 1.5rem;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+}
+
+.view-all-btn:hover {
+  background-color: var(--light-purple);
+}
+
+.add-to-cart-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.75rem;
+  width: 100%;
+  border: var(--purple) solid 1px;
+  padding: 0.25rem 0.75rem;
+  font-size: 14px;
+  color: var(--purple);
+  transition: all 0.3s ease;
+  border-radius: 1rem;
+}
+
+.add-to-cart-btn:hover {
+  background-color: var(--light-purple);
+  color: var(--purple);
+  font-weight: 600;
+}
+
+@media screen and (max-width: 768px) {
+  .view-all-btn {
+    font-size: 12px;
+    padding: 0.25rem 1rem;
+  }
 }
