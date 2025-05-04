@@ -266,7 +266,7 @@ const page = () => {
                 <p className="text-sm text-gray-600 text-center mt-2">
                   Already have an account?{" "}
                   <Link
-                    href="/login"
+                    href="/pages/login"
                     className="text-purple-700 hover:underline font-medium"
                   >
                     Sign In

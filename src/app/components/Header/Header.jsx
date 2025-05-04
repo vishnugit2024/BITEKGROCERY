@@ -305,7 +305,12 @@ const Header = () => {
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.5 + index * 0.1 }}
                 >
-                  <Link href="/pages/contact" className="flex items-center gap-1">{item}</Link>
+                  <Link
+                    href="/pages/contact"
+                    className="flex items-center gap-1"
+                  >
+                    {item}
+                  </Link>
                 </motion.li>
               ))}
 
@@ -424,15 +429,30 @@ const Header = () => {
           </button>
         </div>
         <ul className="space-y-4 text-gray-800">
-          <li className="border-b-1 border-gray-300 font-medium"><Link href="/">Home</Link></li>
-          <li className="border-b-1 border-gray-300 font-medium"><Link href="/">Shop</Link></li>
-          <li className="border-b-1 border-gray-300 font-medium"><Link href="/">Fruits & Vegetables</Link></li>
-          <li className="border-b-1 border-gray-300 font-medium"><Link href="/">Beverages</Link></li>
-          <li className="border-b-1 border-gray-300 font-medium"><Link href="/">Blog</Link></li>
-          <li className="border-b-1 border-gray-300 font-medium"><Link href="/pages/contact">Contact</Link></li>
-          <li className="border-b-1 border-gray-300 font-medium"><Link href="/">Trending Products</Link></li>
-          <li className="border-b-1 border-gray-300 font-medium"><Link href="/">Almost Finished</Link></li>
-
+          <li className="border-b-1 border-gray-300 font-medium">
+            <Link href="/">Home</Link>
+          </li>
+          <li className="border-b-1 border-gray-300 font-medium">
+            <Link href="/">Shop</Link>
+          </li>
+          <li className="border-b-1 border-gray-300 font-medium">
+            <Link href="/">Fruits & Vegetables</Link>
+          </li>
+          <li className="border-b-1 border-gray-300 font-medium">
+            <Link href="/">Beverages</Link>
+          </li>
+          <li className="border-b-1 border-gray-300 font-medium">
+            <Link href="/">Blog</Link>
+          </li>
+          <li className="border-b-1 border-gray-300 font-medium">
+            <Link href="/pages/contact">Contact</Link>
+          </li>
+          <li className="border-b-1 border-gray-300 font-medium">
+            <Link href="/">Trending Products</Link>
+          </li>
+          <li className="border-b-1 border-gray-300 font-medium">
+            <Link href="/">Almost Finished</Link>
+          </li>
         </ul>
         <div className="mt-5">
           <p className="font-bold text-gray-400">Bitek Mart Helpers</p>
