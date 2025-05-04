@@ -117,7 +117,7 @@ const NewArrival = () => {
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-xl font-bold text-gray-800">New Arrivals</h2>
         <Link href="/">
-          <button className="flex items-center gap-1 border border-purple-700 text-purple-700 py-1 px-4 rounded-full text-sm hover:bg-purple-100 transition">
+          <button className="view-all-btn">
             View All
             <ArrowRight size={16} />
           </button>
@@ -178,7 +178,7 @@ const NewArrival = () => {
                 </div>
 
                 <button
-                  className="mt-2 w-full border rounded-full py-1 text-sm text-purple-700 hover:bg-purple-100 hover:font-semibold transition"
+                  className="add-to-cart-btn"
                   onClick={() => addToCart(product)}
                   disabled={addedProducts[product.id]}
                 >

@@ -102,7 +102,10 @@ const Page = () => {
               {/* Actions */}
               <td className="py-4 px-2">
                 <div className="flex items-center gap-2 md:gap-4">
-                  <button className="py-1 md:py-2 px-1 md:px-4 text-white text-sm md:font-medium w-full rounded bg-purple-800 hover:bg-purple-900">
+                  <button
+                    className="py-1 md:py-2 px-1 md:px-4 text-white text-sm md:font-medium w-full rounded"
+                    style={{ backgroundColor: "var(--purple)" }}
+                  >
                     Add to cart
                   </button>
                   <button className="text-gray-500 hover:text-red-600">
