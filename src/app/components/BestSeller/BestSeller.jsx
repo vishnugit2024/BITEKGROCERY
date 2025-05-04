@@ -121,24 +121,28 @@ const BestSeller = () => {
               </div>
 
               {/* Product Image - Using placeholder */}
-              <div className="h-35 flex justify-center m-auto items-center">
-                <Image
-                  src={product.image}
-                  alt={product.name}
-                  width={112}
-                  height={112}
-                  className="object-contain h-full w-full"
-                />
-              </div>
+              <Link href={`/product/${product.id}`}>
+                <div className="h-35 flex justify-center m-auto items-center">
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    width={112}
+                    height={112}
+                    className="object-contain h-full w-full"
+                  />
+                </div>
+              </Link>
             </div>
 
             {/* Right side - Product details */}
             <div className="w-full md:w-2/3 flex flex-col justify-between">
               {/* Product Name */}
               <div>
-                <h3 className="mt-2 text-md font-semibold line-clamp-2 hover:underline">
-                  {product.name}
-                </h3>
+                <Link href={`/product/${product.id}`}>
+                  <h3 className="mt-2 text-md font-semibold line-clamp-2 hover:underline">
+                    {product.name}
+                  </h3>
+                </Link>
 
                 {/* Rating */}
                 <div className="flex items-center text-sm gap-1 mt-1">

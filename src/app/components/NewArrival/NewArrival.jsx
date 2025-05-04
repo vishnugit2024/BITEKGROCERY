@@ -154,17 +154,21 @@ const NewArrival = () => {
                   <Heart size={20} onClick={() => addToWishlist(product)} />
                 </div>
 
-                <div className="w-50 h-50 flex justify-center m-auto items-center mb-2 bg-white">
-                  <Image
-                    src={product.img}
-                    alt={product.name}
-                    className="object-contain h-full"
-                  />
-                </div>
+                <Link href={`/product/${product.id}`}>
+                  <div className="w-50 h-50 flex justify-center m-auto items-center mb-2 bg-white">
+                    <Image
+                      src={product.img}
+                      alt={product.name}
+                      className="object-contain h-full"
+                    />
+                  </div>
+                </Link>
 
-                <h3 className="text-sm font-semibold line-clamp-2 mb-1 hover:underline">
-                  {product.name}
-                </h3>
+                <Link href={`/product/${product.id}`}>
+                  <h3 className="text-sm font-semibold line-clamp-2 mb-1 hover:underline">
+                    {product.name}
+                  </h3>
+                </Link>
                 <div className="flex items-center text-sm gap-1 mb-1">
                   <div className="text-yellow-400">★ ★ ★ ★ ★</div>
                   <span className="text-gray-500 text-xs">(3)</span>

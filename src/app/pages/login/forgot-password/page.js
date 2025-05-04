@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Mail } from "lucide-react";
-import stylebanner from "../../Images/DowloadImage/stylebanner.jpg";
+import stylebanner from "../../../Images/DowloadImage/stylebanner.jpg";
 import toast from "react-hot-toast";
 const Page = () => {
   const [email, setEmail] = useState("");
@@ -19,9 +19,9 @@ const Page = () => {
 
     // Simulate async action (API call)
     setTimeout(() => {
-      alert(`Reset link sent to: ${email}`);
+      toast.success(`Reset link sent to: ${email}`);
       setLoading(false);
-    }, 2000);
+    }, 1000);
   };
 
   return (
@@ -49,6 +49,14 @@ const Page = () => {
                 Home
               </Link>
               <span className="text-white/70">/</span>
+              <Link
+                href="/pages/login"
+                className="hover:text-white transition-colors duration-200 font-medium"
+              >
+                Login
+              </Link>
+              <span className="text-white/80">/</span>
+
               <span className="font-medium">Forget Password</span>
             </div>
           </div>
