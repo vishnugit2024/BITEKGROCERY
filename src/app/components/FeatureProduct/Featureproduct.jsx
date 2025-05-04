@@ -125,20 +125,24 @@ const Featureproduct = () => {
                 </div>
 
                 {/* Product Image */}
-                <div className="w-30 h-30 lg:w-50 lg:h-45 md:w-45 md:h-40 flex justify-center m-auto items-center mb-2 bg-white ">
-                  <Image
-                    src={product.img}
-                    alt={product.name}
-                    className="object-contain h-full"
-                  />
-                </div>
+                <Link href={`/product/${product.id}`}>
+                  <div className="w-30 h-30 lg:w-50 lg:h-45 md:w-45 md:h-40 flex justify-center m-auto items-center mb-2 bg-white ">
+                    <Image
+                      src={product.img}
+                      alt={product.name}
+                      className="object-contain h-full"
+                    />
+                  </div>
+                </Link>
               </div>
 
               {/* Product Name */}
               <div className="w-full">
-                <h3 className="mt-2 text-md font-semibold line-clamp-2 hover:underline">
-                  {product.name}
-                </h3>
+                <Link href={`/product/${product.id}`}>
+                  <h3 className="mt-2 text-md font-semibold line-clamp-2 hover:underline">
+                    {product.name}
+                  </h3>
+                </Link>
 
                 {/* Rating */}
                 <div className="flex items-center text-sm gap-1 mt-1">
