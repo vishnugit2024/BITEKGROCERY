@@ -37,6 +37,7 @@ const Header = () => {
     { label: "Last 24 Hours", href: "/deals/last-24-hours" },
     { label: "Clearance Sale", href: "/deals/clearance" },
   ];
+
   return (
     <header className="w-full">
       {/* Top Strip */}
@@ -136,6 +137,7 @@ const Header = () => {
           </div>
         </div>
       </motion.div>
+
       <motion.div
         className="max-w-7xl  mx-auto py-4 hidden md:block"
         initial={{ y: 30, opacity: 0 }}
@@ -231,17 +233,15 @@ const Header = () => {
                 All Categories
               </div>
               <ChevronDown
-                className={`w-5 h-5 transition-transform duration-200 ${
-                  openDropdown ? "rotate-180" : ""
-                }`}
+                className={`w-5 h-5 transition-transform duration-200 ${openDropdown ? "rotate-180" : ""
+                  }`}
               />
               {/* Dropdown */}
               <motion.div
-                className={`absolute top-full left-0 w-full bg-white text-gray-800 border-1 border-gray-200 border-t-0 rounded-b z-30 overflow-hidden transition-all duration-300 ease-in-out ${
-                  openDropdown
+                className={`absolute top-full left-0 w-full bg-white text-gray-800 border-1 border-gray-200 border-t-0 rounded-b z-30 overflow-hidden transition-all duration-300 ease-in-out ${openDropdown
                     ? "max-h-[500px] opacity-100"
                     : "max-h-0 opacity-0 pointer-events-none"
-                }`}
+                  }`}
                 initial={{ maxHeight: 0, opacity: 0 }}
                 animate={{
                   maxHeight: openDropdown ? 500 : 0,
@@ -283,7 +283,6 @@ const Header = () => {
               </motion.div>
             </div>
 
-            {/* Menu Links */}
             <motion.ul
               className="flex-1 flex items-center justify-between px-6 py-3 text-gray-700 font-medium text-base"
               initial={{ opacity: 0 }}
@@ -291,22 +290,22 @@ const Header = () => {
               transition={{ duration: 0.3, delay: 0.4 }}
             >
               {[
-                "Home",
-                "Shop",
-                "Fruits & Vegetables",
-                "Beverages",
-                "Blog",
-                "Contact",
+                { label: "Home", url: "/" },
+                { label: "Shop", url: "/shop" },
+                { label: "Fruits & Vegetables", url: "/fruits-vegetables" },
+                { label: "Beverages", url: "/beverages" },
+                { label: "Blog", url: "/pages/blog" },
+                { label: "Contact", url: "/contact" },
               ].map((item, index) => (
                 <motion.li
-                  key={index}
-                  className="hover:text-purple-600 transition font-bold"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.5 + index * 0.1 }}
-                >
-                  <Link href="/pages/contact" className="flex items-center gap-1">{item}</Link>
-                </motion.li>
+                key={index}
+                className="hover:text-purple-600 transition font-medium"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.5 + index * 0.1 }}
+              >
+                <Link href={item.url} className="flex items-center gap-1">{item.label}</Link>
+              </motion.li>
               ))}
 
               {/* Trending Dropdown */}
@@ -315,7 +314,7 @@ const Header = () => {
                 onMouseEnter={() => setOpen(true)}
                 onMouseLeave={() => setOpen(false)}
               >
-                <div className="flex items-center gap-1 text-red-600 font-bold cursor-pointer">
+                <div className="flex items-center gap-1 text-red-600 font-medium cursor-pointer">
                   <Link href="/" className="flex items-center gap-1">
                     Trending <ChevronDown className="w-4 h-4" />
                   </Link>
@@ -323,9 +322,8 @@ const Header = () => {
 
                 {/* Dropdown */}
                 <motion.ul
-                  className={`absolute top-full left-0 mt-2 w-40 bg-white shadow-lg rounded-md overflow-hidden transition-all duration-200 z-10 ${
-                    open ? "opacity-100 visible" : "opacity-0 invisible"
-                  }`}
+                  className={`absolute top-full left-0 mt-2 w-40 bg-white shadow-lg rounded-md overflow-hidden transition-all duration-200 z-10 ${open ? "opacity-100 visible" : "opacity-0 invisible"
+                    }`}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: open ? 1 : 0 }}
                   transition={{ duration: 0.3 }}
@@ -349,7 +347,7 @@ const Header = () => {
                 onMouseEnter={() => setIsAlmostOpen(true)}
                 onMouseLeave={() => setIsAlmostOpen(false)}
               >
-                <div className="flex items-center gap-2 text-red-600 font-bold cursor-pointer">
+                <div className="flex items-center gap-2 text-red-600 font-medium cursor-pointer">
                   <Link href="/" className="flex items-center gap-2">
                     Almost Finished
                     <span className="bg-red-500 text-white text-xs px-2 py-0.5 rounded">
@@ -361,9 +359,8 @@ const Header = () => {
 
                 {/* Dropdown */}
                 <motion.ul
-                  className={`absolute top-full left-0 mt-2 w-48 bg-white shadow-lg rounded-md overflow-hidden transition-all duration-200 z-10 ${
-                    isAlmostOpen ? "opacity-100 visible" : "opacity-0 invisible"
-                  }`}
+                  className={`absolute top-full left-0 mt-2 w-48 bg-white shadow-lg rounded-md overflow-hidden transition-all duration-200 z-10 ${isAlmostOpen ? "opacity-100 visible" : "opacity-0 invisible"
+                    }`}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: isAlmostOpen ? 1 : 0 }}
                   transition={{ duration: 0.3 }}
@@ -404,16 +401,14 @@ const Header = () => {
       </div>
       {/* Overlay */}
       <div
-        className={`fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity duration-300 ${
-          isSidebarOpen ? "opacity-100 visible" : "opacity-0 invisible"
-        }`}
+        className={`fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity duration-300 ${isSidebarOpen ? "opacity-100 visible" : "opacity-0 invisible"
+          }`}
         onClick={() => setIsSidebarOpen(false)}
       ></div>
       {/* Sidebar Panel */}
       <div
-        className={`fixed top-0 left-0 w-full h-full bg-white shadow-lg z-50 p-3 transition-transform duration-300 transform ${
-          isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-        }`}
+        className={`fixed top-0 left-0 w-full h-full bg-white shadow-lg z-50 p-3 transition-transform duration-300 transform ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+          }`}
       >
         <div className="flex justify-between items-center mb-6">
           <Link href="/">

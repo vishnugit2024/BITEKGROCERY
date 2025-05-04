@@ -203,16 +203,20 @@ const Footer = () => {
           <Image src={payment} className="h-25 w-70" alt="Visa" />
         </div>
         <div className="flex space-x-3 mt-2 md:mt-0">
-          <Link href="#" className="text-gray-600 hover:text-gray-700">
+          <Link href="/pages/privacy-policy" className="text-gray-600 hover:text-gray-700">
             Privacy Policy
           </Link>
           <span className="text-gray-600">|</span>
-          <Link href="#" className="text-gray-600 hover:text-gray-700">
+          <Link href="/pages/terms-and-conditions" className="text-gray-600 hover:text-gray-700">
             Terms of Use
           </Link>
           <span className="text-gray-600">|</span>
           <Link href="#" className="text-gray-600 hover:text-gray-700">
             Order Tracking
+          </Link>
+          <span className="text-gray-600">|</span>
+          <Link href="/pages/return-refund-policy" className="text-gray-600 hover:text-gray-700">
+            Return & Refund Policy
           </Link>
         </div>
       </div>
