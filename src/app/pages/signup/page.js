@@ -7,6 +7,7 @@ import stylebanner from "../../Images/DowloadImage/stylebanner.jpg";
 import Image from "next/image";
 import Link from "next/link";
 import { Eye, EyeOff, Mail, User } from "lucide-react";
+import toast from "react-hot-toast";
 
 const page = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -23,7 +24,7 @@ const page = () => {
     setLoading(true);
 
     if (password !== confirmPassword) {
-      alert("Passwords do not match.");
+      toast.error("Passwords do not match.");
       setLoading(false);
       return;
     }
