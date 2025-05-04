@@ -200,7 +200,7 @@ const Footer = () => {
               <span>DIGI INDIA SOLUTIONS</span>.
             </Link>
           </p>
-          <Image src={payment} className="h-15 w-70" alt="Visa" />
+          <Image src={payment} className="h-25 w-70" alt="Visa" />
         </div>
         <div className="flex space-x-3 mt-2 md:mt-0">
           <Link href="#" className="text-gray-600 hover:text-gray-700">
