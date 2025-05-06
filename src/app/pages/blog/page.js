@@ -2,17 +2,18 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import blog1 from "../../Images/DowloadImage/blog-post-1.jpg";
+import Link from 'next/link';
 
 // Simulate fetching blog posts from an API
 const fetchBlogs = async (page) => {
     // You can replace this with an actual API call
     const blogs = [
-        { title: "How grocers are approaching delivery as the market evolves", date: "November 3, 2023", description: "Elinhawk breakfast i mbal delon mobilinstruksen..." },
-        { title: "The Friday Checkout: Food insecurity keeps retailers off balance", date: "November 3, 2023", description: "Filass tunulkissa och hentiv servicebeam..." },
-        { title: "Consumer want grocer to use AI to help them save money", date: "November 3, 2023", description: "I rel urban. Filass tunulkissa och hentiv..." },
-        { title: "Order up! How grocers are replicating the restaurant experience in retail", date: "November 3, 2023", description: "Elinhawk breakfast i mbal delon mobilinstruksen..." },
-        { title: "Order up! How grocers are replicating the restaurant experience in retail", date: "November 3, 2023", description: "Elinhawk breakfast i mbal delon mobilinstruksen..." },
-        { title: "Order up! How grocers are replicating the restaurant experience in retail", date: "November 3, 2023", description: "Elinhawk breakfast i mbal delon mobilinstruksen..." },
+        { title: "How grocers are approaching delivery as the market evolves", date: "November 3, 2023", description: "Elinhawk breakfast i mbal delon mobilinstruksen..." , Url:"/pages/blog/1"},
+        { title: "The Friday Checkout: Food insecurity keeps retailers off balance", date: "November 3, 2023", description: "Filass tunulkissa och hentiv servicebeam..." , Url:"/pages/blog/1"},
+        { title: "Consumer want grocer to use AI to help them save money", date: "November 3, 2023", description: "I rel urban. Filass tunulkissa och hentiv..." , Url:"/pages/blog/2"},
+        { title: "Order up! How grocers are replicating the restaurant experience in retail", date: "November 3, 2023", description: "Elinhawk breakfast i mbal delon mobilinstruksen..." , Url:"/pages/blog/2" },
+        { title: "Order up! How grocers are replicating the restaurant experience in retail", date: "November 3, 2023", description: "Elinhawk breakfast i mbal delon mobilinstruksen..." , Url:"/pages/blog/2"},
+        { title: "Order up! How grocers are replicating the restaurant experience in retail", date: "November 3, 2023", description: "Elinhawk breakfast i mbal delon mobilinstruksen..." , Url:"/pages/blog/2"},
         // Add more blogs here if needed
     ];
 
@@ -60,7 +61,8 @@ const Page = () => {
                 <div className="md:col-span-8">
                     {blogs.length > 0 ? (
                         blogs.map((blog, index) => (
-                            <div key={index} className="bg-white rounded-2xl shadow-lg overflow-hidden mb-8">
+                            <Link key={index} href={blog.Url}>
+                            <div className="bg-white rounded-2xl shadow-lg overflow-hidden mb-8">
                                 <div className="relative h-100 w-full">
                                     <Image
                                         src={blog1} // Replace with your actual image path
@@ -84,6 +86,7 @@ const Page = () => {
                                     </a>
                                 </div>
                             </div>
+                            </Link>
                         ))
                     ) : (
                         <p>No blog posts available.</p>
