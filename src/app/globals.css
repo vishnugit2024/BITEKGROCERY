@@ -14,11 +14,26 @@
   font-family: 'Poppins', sans-serif;
 }
 
+
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
+}
+
+.slick-list{
+  height: 80dvh !important;
+}
+
+.slick-dots li{
+  height: 100px !important;
+  width: 100px !important;
+}
+.slick-dots li a img{
+  height: 100px !important;
+  width: 100px !important;
+  object-fit: cover !important;
 }
 
 .purple-btn {

@@ -291,11 +291,11 @@ const Header = () => {
             >
               {[
                 { label: "Home", url: "/" },
-                { label: "Shop", url: "/shop" },
+                { label: "Shop", url: "/pages/shop" },
                 { label: "Fruits & Vegetables", url: "/fruits-vegetables" },
                 { label: "Beverages", url: "/beverages" },
                 { label: "Blog", url: "/pages/blog" },
-                { label: "Contact", url: "/contact" },
+                { label: "Contact", url: "/pages/contact" },
               ].map((item, index) => (
                 <motion.li
                 key={index}
@@ -420,7 +420,7 @@ const Header = () => {
         </div>
         <ul className="space-y-4 text-gray-800">
           <li className="border-b-1 border-gray-300 font-medium"><Link href="/">Home</Link></li>
-          <li className="border-b-1 border-gray-300 font-medium"><Link href="/">Shop</Link></li>
+          <li className="border-b-1 border-gray-300 font-medium"><Link href="/pages/shop">Shop</Link></li>
           <li className="border-b-1 border-gray-300 font-medium"><Link href="/">Fruits & Vegetables</Link></li>
           <li className="border-b-1 border-gray-300 font-medium"><Link href="/">Beverages</Link></li>
           <li className="border-b-1 border-gray-300 font-medium"><Link href="/">Blog</Link></li>
