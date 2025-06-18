@@ -165,7 +165,7 @@ const NewArrival = () => {
                 </Link>
 
                 <Link href={`/product/${product.id}`}>
-                  <h3 className="text-sm font-semibold line-clamp-2 mb-1 hover:underline">
+                  <h3 className="mt-2 text-sm md:text-md font-normal md:font-semibold line-clamp-2 hover:underline">
                     {product.name}
                   </h3>
                 </Link>
@@ -174,10 +174,10 @@ const NewArrival = () => {
                   <span className="text-gray-500 text-xs">(3)</span>
                 </div>
 
-                <div className="text-lg font-bold text-red-600">
+                <div className="text-md md:text-lg font-bold text-red-600">
                   {product.newPrice}
                 </div>
-                <div className="text-sm text-gray-500 line-through">
+                <div className="text-sm text-gray-400 line-through">
                   {product.oldPrice}
                 </div>
 

@@ -18,7 +18,7 @@ const HomeBanner = () => {
   ];
 
   return (
-    <section className="w-[78%] ml-auto py-3 bg-white sm:px-6 lg:px-8">
+    <section className="w-full md:w-[78%] ml-auto py-3 bg-white sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0 }}

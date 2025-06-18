@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { ShoppingBag, Trash2, Minus, Plus } from "lucide-react";
 import toast from "react-hot-toast";
 import { calculateCartTotals } from "../../lib/cart";
+import Image from "next/image";
+import product2 from "../../Images/DowloadImage/KabuliChana.png";
 
 export default function CartPage() {
   const [cartItems, setCartItems] = useState([]);
@@ -15,24 +17,24 @@ export default function CartPage() {
     const mockCartItems = [
       {
         id: "1",
-        name: "Premium Wireless Headphones",
+        name: "Kabuli Chana",
         price: 249.99,
         quantity: 1,
-        image: "/placeholder.svg?height=80&width=80",
+        image: product2,
       },
       {
         id: "2",
-        name: "Smart Watch Series 5",
+        name: "Kabuli Chana",
         price: 399.99,
         quantity: 1,
-        image: "/placeholder.svg?height=80&width=80",
+        image: product2,
       },
       {
         id: "3",
-        name: "Ultralight Laptop Stand",
+        name: "Kabuli Chana",
         price: 79.99,
         quantity: 2,
-        image: "/placeholder.svg?height=80&width=80",
+        image: product2,
       },
     ];
 
@@ -118,32 +120,40 @@ export default function CartPage() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Cart Items */}
         <div className="lg:col-span-2">
-          <div className="bg-white shadow-lg rounded p-6">
-            <div className="hidden md:grid text-center grid-cols-12 text-sm font-semibold text-gray-500 mb-4">
-              <div className="col-span-6">Product</div>
-              <div className="col-span-2">Price</div>
-              <div className="col-span-2">Quantity</div>
-              <div className="col-span-2">Total</div>
+          <div
+            className="bg-white shadow-lg rounded p-5"
+            style={{
+              maxHeight: "400px",
+              // WebkitOverflowScrolling: 'touch', // Enables momentum scroll on iOS
+              overflow: "auto",
+            }}
+          >
+            <div className="flex justify-around items-start text-sm font-semibold text-gray-500 mb-4">
+              <div>Image</div>
+              <div>Product</div>
+              <div>Price</div>
+              <div>Quantity</div>
+              <div>Total</div>
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-4 pr-2">
               {cartItems.map((item) => (
                 <div
                   key={item.id}
-                  className="grid grid-cols-12 items-center gap-4 border-b border-gray-300 pb-4"
+                  className="flex justify-between items-center gap-4 border-b border-gray-300 pb-4"
                 >
-                  <div className="col-span-6 flex items-center space-x-4">
-                    <img
+                  <div>
+                    <Image
                       src={item.image}
                       alt={item.name}
-                      className="w-16 h-16 rounded"
+                      width={80}
+                      height={80}
+                      className="rounded-md object-contain"
                     />
-                    <span className="font-medium">{item.name}</span>
                   </div>
-                  <div className="col-span-2 text-center">
-                    ₹{item.price.toFixed(2)}
-                  </div>
-                  <div className="col-span-2 flex items-center justify-center space-x-2">
+                  <div className="font-medium">{item.name}</div>
+                  <div className="text-center">₹{item.price.toFixed(2)}</div>
+                  <div className="flex items-center justify-center space-x-2">
                     <button
                       onClick={() =>
                         updateQuantity(item.id, item.quantity - 1, item.name)
@@ -170,7 +180,7 @@ export default function CartPage() {
                       <Plus className="w-4 h-4" />
                     </button>
                   </div>
-                  <div className="col-span-2 text-right flex justify-end items-center space-x-2">
+                  <div className="text-right flex justify-end items-center space-x-2">
                     <span>₹{(item.price * item.quantity).toFixed(2)}</span>
                     <button
                       onClick={() => removeItem(item.id, item.name)}

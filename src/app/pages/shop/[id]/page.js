@@ -4,10 +4,11 @@ import Image from "next/image";
 import Slider from "react-slick";
 import {
   Heart,
-  Share2,
-  Shuffle,
   Minus,
   Plus,
+  Share2,
+  ShoppingCart,
+  Shuffle,
 } from "lucide-react";
 import productImage1 from "../../../Images/DowloadImage/about-image-01.jpg";
 import productImage2 from "../../../Images/DowloadImage/about-image-02.jpg";
@@ -24,8 +25,7 @@ const productData = {
   price: 0.5,
   originalPrice: 1.99,
   addedToCartCount: 34,
-  shippingInfo:
-    "Shipping within 3 days — Speedy and reliable parcel delivery!",
+  shippingInfo: "Shipping within 3 days — Speedy and reliable parcel delivery!",
   paymentInfo:
     "Payment on delivery, Google Pay, online card. 5% discount for cash.",
   warrantyInfo: "No return if the product is properly delivered.",
@@ -72,7 +72,7 @@ const ProductDetails = () => {
       );
     },
     dots: true,
-    dotsClass: "slick-dots slick-thumb mt-4",
+    dotsClass: "slick-dots slick-thumb",
     infinite: true,
     speed: 500,
     slidesToShow: 1,
@@ -80,9 +80,10 @@ const ProductDetails = () => {
   };
 
   const tabClasses = (tab) =>
-    `px-4 py-2 text-sm font-medium border-b-2 ${activeTab === tab
-      ? "border-green-600 text-green-600"
-      : "border-transparent text-gray-600 hover:text-green-600"
+    `px-4 py-2 text-sm font-medium border-b-2 ${
+      activeTab === tab
+        ? "border-green-600 text-green-600"
+        : "border-transparent text-gray-600 hover:text-green-600"
     }`;
 
   return (
@@ -98,7 +99,7 @@ const ProductDetails = () => {
                   alt={`product-${index}`}
                   width={500}
                   height={400}
-                  className="object-contain w-full h-[400px]"
+                  className="object-contain w-full h-[450px]"
                 />
               </div>
             ))}
@@ -119,16 +120,16 @@ const ProductDetails = () => {
 
           <div className="flex items-center space-x-3">
             <span className="text-3xl font-bold text-red-600">
-              ${price.toFixed(2)}
+              ₹{price.toFixed(2)}
             </span>
             <span className="line-through text-gray-500 text-lg">
-              ${originalPrice.toFixed(2)}
+              ₹{originalPrice.toFixed(2)}
             </span>
           </div>
 
           <div className="bg-orange-100 text-orange-800 text-sm px-4 py-2 rounded-md">
-            This product has been added to{" "}
-            <b>{addedToCartCount} people’s</b> carts.
+            This product has been added to <b>{addedToCartCount} people’s</b>{" "}
+            carts.
           </div>
 
           <div className="border rounded-md px-4 py-3 text-sm text-gray-700 bg-white">
@@ -138,20 +139,18 @@ const ProductDetails = () => {
           {/* Quantity + Cart Button */}
           <div className="flex items-center gap-3 mt-4">
             <div className="flex items-center border rounded-md">
-              <button className="px-3 py-1 hover:bg-gray-100">
+              <button className="px-3 py-1">
                 <Minus size={16} />
               </button>
               <span className="px-4">1</span>
-              <button className="px-3 py-1 hover:bg-gray-100">
+              <button className="px-3 py-1">
                 <Plus size={16} />
               </button>
             </div>
-            <button className="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition text-sm font-medium flex items-center gap-2">
-              <Plus size={16} /> Add to cart
+            <button className="bg-purple-700 text-white px-6 py-2 rounded-md hover:bg-purple-800 transition text-sm font-medium flex items-center gap-2">
+              <ShoppingCart className="text-white" size={16} /> Add to cart
             </button>
           </div>
-
-
 
           {/* Wishlist / Share / Compare */}
           <div className="flex items-center gap-4 mt-6 text-sm text-gray-700">
@@ -169,7 +168,7 @@ const ProductDetails = () => {
       </div>
       {/* Tabs */}
       <div className="max-w-7xl mx-auto px-4 pb-5">
-        <div className="flex space-x-4 border-b mb-4">
+        <div className="flex justify-start space-x-4 flex-wrap border-b mb-4">
           <button
             onClick={() => setActiveTab("description")}
             className={tabClasses("description")}
@@ -212,7 +211,6 @@ const ProductDetails = () => {
       {/* Related Products */}
       <Featureproduct />
     </>
-
   );
 };
 

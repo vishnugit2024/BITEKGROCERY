@@ -18,7 +18,7 @@ const Footer = () => {
       {/* Newsletter */}
       <div className="max-w-7xl mx-auto px-4 py-8 md:flex md:justify-between md:items-center border-b border-gray-400">
         <div className="mb-6 md:mb-0">
-          <h2 className="text-lg font-semibold">
+          <h2 className="text-md md:text-lg font-semibold">
             Join our newsletter for latest deals & updates
           </h2>
           <p className="text-gray-600 max-w-md">
@@ -26,11 +26,11 @@ const Footer = () => {
             worry, we not spam!
           </p>
         </div>
-        <form className="flex w-70 justify-end md:w-1/2">
+        <form className="flex w-full justify-end md:w-96">
           <input
             type="email"
             placeholder="Enter your email address"
-            className="w-70 px-4 py-3 rounded-l-md bg-white border border-gray-300 focus:outline-purple-600"
+            className="w-full px-4 py-3 rounded-l-md bg-white border border-gray-300 focus:outline-purple-600"
           />
           <button
             className=" text-white px-6 rounded-r-md font-semibold"
@@ -46,7 +46,7 @@ const Footer = () => {
         {/* Help */}
         <div>
           <Link href={"/"}>
-            <Image src={logo} alt="logo" className="w-30 h-auto md:m-auto" />
+            <Image src={logo} alt="logo" className="w-40 h-15 md:m-auto" />
           </Link>
           <div className="my-2 flex items-center gap-4">
             <Phone style={{ color: "var(--purple)" }} />{" "}
@@ -180,9 +180,7 @@ const Footer = () => {
           </div>
           <div className="mt-8 flex justify-around align-baseline">
             <button className="purple-btn">LogIn</button>
-            <button className="black-btn">
-              SignUP
-            </button>
+            <button className="black-btn">SignUP</button>
           </div>
         </div>
       </div>
@@ -200,14 +198,20 @@ const Footer = () => {
               <span>DIGI INDIA SOLUTIONS</span>.
             </Link>
           </p>
-          <Image src={payment} className="h-25 w-70" alt="Visa" />
+          <Image src={payment} className="h-25 w-70 m-auto md:m-0" alt="Visa" />
         </div>
         <div className="flex space-x-3 mt-2 md:mt-0">
-          <Link href="/pages/privacy-policy" className="text-gray-600 hover:text-gray-700">
+          <Link
+            href="/pages/privacy-policy"
+            className="text-gray-600 hover:text-gray-700"
+          >
             Privacy Policy
           </Link>
           <span className="text-gray-600">|</span>
-          <Link href="/pages/terms-and-conditions" className="text-gray-600 hover:text-gray-700">
+          <Link
+            href="/pages/terms-and-conditions"
+            className="text-gray-600 hover:text-gray-700"
+          >
             Terms of Use
           </Link>
           <span className="text-gray-600">|</span>
@@ -215,7 +219,10 @@ const Footer = () => {
             Order Tracking
           </Link>
           <span className="text-gray-600">|</span>
-          <Link href="/pages/return-refund-policy" className="text-gray-600 hover:text-gray-700">
+          <Link
+            href="/pages/return-refund-policy"
+            className="text-gray-600 hover:text-gray-700"
+          >
             Return & Refund Policy
           </Link>
         </div>

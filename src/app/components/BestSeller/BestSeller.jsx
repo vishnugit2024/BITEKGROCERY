@@ -139,7 +139,7 @@ const BestSeller = () => {
               {/* Product Name */}
               <div>
                 <Link href={`/product/${product.id}`}>
-                  <h3 className="mt-2 text-md font-semibold line-clamp-2 hover:underline">
+                  <h3 className="mt-2 text-sm md:text-md font-normal md:font-semibold line-clamp-2 hover:underline">
                     {product.name}
                   </h3>
                 </Link>
@@ -154,10 +154,10 @@ const BestSeller = () => {
               <div className="mt-auto">
                 {/* Price */}
                 <div className="flex items-center gap-2">
-                  <div className="text-lg font-bold text-red-600">
+                  <div className="text-md md:text-lg font-bold text-red-600">
                     {product.newPrice}
                   </div>
-                  <div className="text-sm text-gray-500 line-through">
+                  <div className="text-sm text-gray-400 line-through">
                     {product.oldPrice}
                   </div>
                 </div>

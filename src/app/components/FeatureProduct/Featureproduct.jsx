@@ -115,7 +115,7 @@ const Featureproduct = () => {
             >
               <div className="relative">
                 {/* Discount Badge */}
-                <div className="absolute top-2 left-0 bg-red-600 text-white text-xs font-semibold px-3 py-1 rounded-e-2xl z-10">
+                <div className="absolute top-2 left-0 bg-red-600 text-white text-xs font-semibold px-2 py-1 rounded-e-2xl z-10">
                   {product.discount}
                 </div>
 
@@ -139,7 +139,7 @@ const Featureproduct = () => {
               {/* Product Name */}
               <div className="w-full">
                 <Link href={`/product/${product.id}`}>
-                  <h3 className="mt-2 text-md font-semibold line-clamp-2 hover:underline">
+                  <h3 className="mt-2 text-sm md:text-md font-normal md:font-semibold line-clamp-2 hover:underline">
                     {product.name}
                   </h3>
                 </Link>
@@ -152,16 +152,16 @@ const Featureproduct = () => {
 
                 {/* Price */}
                 <div className="mt-2">
-                  <div className="text-lg font-bold text-red-600">
+                  <div className="text-md md:text-lg font-bold text-red-600">
                     {product.newPrice}
                   </div>
-                  <div className="text-sm text-gray-500 line-through">
+                  <div className="text-sm text-gray-400 line-through">
                     {product.oldPrice}
                   </div>
                 </div>
 
                 {/* Add to Cart Button */}
-                <button className="add-to-cart-btn">
+                <button className="add-to-cart-btn mb-2 md:mb-0">
                   Add to cart <Plus size={14} />
                 </button>
               </div>

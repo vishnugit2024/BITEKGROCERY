@@ -18,12 +18,12 @@ const StyleBanner1 = () => {
         />
 
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black/50 z-10" />
+        <div className="absolute inset-0 bg-black/60 z-10" />
 
         {/* Text Content */}
         <div className="absolute inset-0 z-20 flex items-start justify-start p-6">
-          <div className="text-white space-y-3">
-            <h3 className="text-2xl font-bold leading-snug">
+          <div className="text-white space-y-1 md:space-y-3">
+            <h3 className="text-lg md:text-2xl font-semibold md:font-bold leading-snug">
               In store or online your health & safety is our top priority
             </h3>
             <p className="text-sm font-medium">

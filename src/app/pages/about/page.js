@@ -8,7 +8,7 @@ import Link from 'next/link';
 
 const AboutPage = () => {
   return (
-    <div className="max-w-7xl mx-auto py-5 text-gray-700">
+    <div className="max-w-7xl mx-auto py-5 px-4 text-gray-700">
       {/* Banner Section */}
       <div className="relative rounded-[10px] overflow-hidden shadow-xl group">
         <Image

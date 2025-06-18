@@ -5,10 +5,8 @@ import {
   LucideHeart,
   LucideShoppingCart,
   LucideSearch,
-  LucideChevronDown,
   LucideMapPin,
   LayoutDashboard,
-  ShoppingCart,
   PhoneCall,
   Send,
   ChevronDown,
@@ -21,7 +19,7 @@ import { Typewriter } from "react-simple-typewriter";
 import { motion } from "framer-motion";
 
 const Header = () => {
-  const [openDropdown, setOpenDropdown] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(true);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [open, setOpen] = useState(false);
   const [isAlmostOpen, setIsAlmostOpen] = useState(false);
@@ -43,9 +41,9 @@ const Header = () => {
       {/* Top Strip */}
       <div
         style={{ backgroundColor: "var(--purple)" }}
-        className=" text-white text-sm py-3"
+        className=" text-white text-sm py-2"
       >
-        <div className="max-w-[1300px] mx-auto flex flex-col md:flex-row justify-between px-4 text-center md:text-left gap-2 md:gap-0 p2-4">
+        <div className="w-full flex flex-col md:flex-row justify-around px-4 text-center md:text-left gap-2 md:gap-0 p2-4">
           <b>
             <Typewriter
               words={[
@@ -97,42 +95,6 @@ const Header = () => {
           </div>
 
           <div className="flex items-center gap-4">
-            {/* Language */}
-            <div className="relative group">
-              <p className="cursor-pointer flex items-center gap-1">
-                English <LucideChevronDown className="w-4 h-4" />
-              </p>
-              <div className="absolute left-0 w-40 bg-white border border-gray-200 rounded shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-opacity duration-200 z-20">
-                <Link href="#" className="block px-4 py-2 hover:bg-gray-100">
-                  English
-                </Link>
-                <Link href="#" className="block px-4 py-2 hover:bg-gray-100">
-                  Spanish
-                </Link>
-                <Link href="#" className="block px-4 py-2 hover:bg-gray-100">
-                  Hindi
-                </Link>
-              </div>
-            </div>
-
-            {/* Currency */}
-            <div className="relative group">
-              <p className="cursor-pointer flex items-center gap-1">
-                USD <LucideChevronDown className="w-4 h-4" />
-              </p>
-              <div className="absolute left-0 w-40 bg-white border border-gray-200 rounded shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-opacity duration-200 z-20">
-                <Link href="#" className="block px-4 py-2 hover:bg-gray-100">
-                  USD
-                </Link>
-                <Link href="#" className="block px-4 py-2 hover:bg-gray-100">
-                  INR
-                </Link>
-                <Link href="#" className="block px-4 py-2 hover:bg-gray-100">
-                  GBP
-                </Link>
-              </div>
-            </div>
-
             <Link href="/">Order Tracking</Link>
           </div>
         </div>
@@ -233,15 +195,17 @@ const Header = () => {
                 All Categories
               </div>
               <ChevronDown
-                className={`w-5 h-5 transition-transform duration-200 ${openDropdown ? "rotate-180" : ""
-                  }`}
+                className={`w-5 h-5 transition-transform duration-200 ${
+                  openDropdown ? "rotate-180" : ""
+                }`}
               />
               {/* Dropdown */}
               <motion.div
-                className={`absolute top-full left-0 w-full bg-white text-gray-800 border-1 border-gray-200 border-t-0 rounded-b z-30 overflow-hidden transition-all duration-300 ease-in-out ${openDropdown
+                className={`absolute top-full left-0 w-full bg-white text-gray-800 border-1 border-gray-200 border-t-0 rounded-b z-30 h-[440px] overflow-y-auto transition-all duration-300 ease-in-out ${
+                  openDropdown
                     ? "max-h-[500px] opacity-100"
                     : "max-h-0 opacity-0 pointer-events-none"
-                  }`}
+                }`}
                 initial={{ maxHeight: 0, opacity: 0 }}
                 animate={{
                   maxHeight: openDropdown ? 500 : 0,
@@ -266,6 +230,15 @@ const Header = () => {
                     "Meat",
                     "Household",
                     "Personal Care",
+                    "Persoqnal Care",
+                    "Persgonal Care",
+                    "Persdonal Care",
+                    "Persoinal Care",
+                    "Persxonal Care",
+                    "Perssonal Care",
+                    "Persongal Care",
+                    "Personxal Care",
+                    "Perhsonal Care",
                   ].map((item) => (
                     <motion.li
                       key={item}
@@ -298,14 +271,16 @@ const Header = () => {
                 { label: "Contact", url: "/pages/contact" },
               ].map((item, index) => (
                 <motion.li
-                key={index}
-                className="hover:text-purple-600 transition font-medium"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.5 + index * 0.1 }}
-              >
-                <Link href={item.url} className="flex items-center gap-1">{item.label}</Link>
-              </motion.li>
+                  key={index}
+                  className="hover:text-purple-600 transition font-medium"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.5 + index * 0.1 }}
+                >
+                  <Link href={item.url} className="flex items-center gap-1">
+                    {item.label}
+                  </Link>
+                </motion.li>
               ))}
 
               {/* Trending Dropdown */}
@@ -322,8 +297,9 @@ const Header = () => {
 
                 {/* Dropdown */}
                 <motion.ul
-                  className={`absolute top-full left-0 mt-2 w-40 bg-white shadow-lg rounded-md overflow-hidden transition-all duration-200 z-10 ${open ? "opacity-100 visible" : "opacity-0 invisible"
-                    }`}
+                  className={`absolute top-full left-0 mt-2 w-40 bg-white shadow-lg rounded-md overflow-hidden transition-all duration-200 z-10 ${
+                    open ? "opacity-100 visible" : "opacity-0 invisible"
+                  }`}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: open ? 1 : 0 }}
                   transition={{ duration: 0.3 }}
@@ -359,8 +335,9 @@ const Header = () => {
 
                 {/* Dropdown */}
                 <motion.ul
-                  className={`absolute top-full left-0 mt-2 w-48 bg-white shadow-lg rounded-md overflow-hidden transition-all duration-200 z-10 ${isAlmostOpen ? "opacity-100 visible" : "opacity-0 invisible"
-                    }`}
+                  className={`absolute top-full left-0 mt-2 w-48 bg-white shadow-lg rounded-md overflow-hidden transition-all duration-200 z-10 ${
+                    isAlmostOpen ? "opacity-100 visible" : "opacity-0 invisible"
+                  }`}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: isAlmostOpen ? 1 : 0 }}
                   transition={{ duration: 0.3 }}
@@ -395,20 +372,27 @@ const Header = () => {
           <Image src={logo} alt="Logo" className="w-24 h-auto" />
         </Link>
 
-        <Link className="cart-responsive" href="/">
-          <ShoppingCart />
+        <Link className="cart-responsive" href="/pages/login">
+          <button className="bg-purple-700 text-sm text-white font-semibold py-1 px-2 rounded">
+            Login
+          </button>
         </Link>
+        {/* <Link className="cart-responsive" href="/">
+          <ShoppingCart />
+        </Link> */}
       </div>
       {/* Overlay */}
       <div
-        className={`fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity duration-300 ${isSidebarOpen ? "opacity-100 visible" : "opacity-0 invisible"
-          }`}
+        className={`fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity duration-300 ${
+          isSidebarOpen ? "opacity-100 visible" : "opacity-0 invisible"
+        }`}
         onClick={() => setIsSidebarOpen(false)}
       ></div>
       {/* Sidebar Panel */}
       <div
-        className={`fixed top-0 left-0 w-full h-full bg-white shadow-lg z-50 p-3 transition-transform duration-300 transform ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-          }`}
+        className={`fixed top-0 left-0 w-full h-full bg-white shadow-lg z-50 p-3 transition-transform duration-300 transform ${
+          isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
       >
         <div className="flex justify-between items-center mb-6">
           <Link href="/">
@@ -419,21 +403,47 @@ const Header = () => {
           </button>
         </div>
         <ul className="space-y-4 text-gray-800">
-          <li className="border-b-1 border-gray-300 font-medium"><Link href="/">Home</Link></li>
-          <li className="border-b-1 border-gray-300 font-medium"><Link href="/pages/shop">Shop</Link></li>
-          <li className="border-b-1 border-gray-300 font-medium"><Link href="/">Fruits & Vegetables</Link></li>
-          <li className="border-b-1 border-gray-300 font-medium"><Link href="/">Beverages</Link></li>
-          <li className="border-b-1 border-gray-300 font-medium"><Link href="/">Blog</Link></li>
-          <li className="border-b-1 border-gray-300 font-medium"><Link href="/pages/contact">Contact</Link></li>
-          <li className="border-b-1 border-gray-300 font-medium"><Link href="/">Trending Products</Link></li>
-          <li className="border-b-1 border-gray-300 font-medium"><Link href="/">Almost Finished</Link></li>
-
+          <li className="border-b-1 border-gray-300 font-medium">
+            <Link href="/">Home</Link>
+          </li>
+          <li className="border-b-1 border-gray-300 font-medium">
+            <Link href="/pages/shop">Shop</Link>
+          </li>
+          <li className="border-b-1 border-gray-300 font-medium">
+            <Link href="/">Fruits & Vegetables</Link>
+          </li>
+          <li className="border-b-1 border-gray-300 font-medium">
+            <Link href="/">Beverages</Link>
+          </li>
+          <li className="border-b-1 border-gray-300 font-medium">
+            <Link href="/pages/blog">Blog</Link>
+          </li>
+          <li className="border-b-1 border-gray-300 font-medium">
+            <Link href="/pages/contact">Contact</Link>
+          </li>
+          <li className="border-b-1 border-gray-300 font-medium">
+            <Link href="/">Trending Products</Link>
+          </li>
+          <li className="border-b-1 border-gray-300 font-medium">
+            <Link href="/">Almost Finished</Link>
+          </li>
         </ul>
-        <div className="mt-5">
+        <div className="mt-4">
+          <p className="font-bold text-gray-400">Cart & Wishlist</p>
+          <ul>
+            <li>
+              <Link href="/pages/wishlist">Wishlist</Link>
+            </li>
+            <li>
+              <Link href="/pages/cart">Cart</Link>
+            </li>
+          </ul>
+        </div>
+        <div className="mt-4">
           <p className="font-bold text-gray-400">Bitek Mart Helpers</p>
           <ul>
             <li>
-              <Link href="/">Privacy Policy</Link>
+              <Link href="/pages/privacy-policy">Privacy Policy</Link>
             </li>
             <li>
               <Link href="/">Order Tracking</Link>
